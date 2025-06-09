@@ -1,8 +1,8 @@
-# Pathology Vision-Language Model Benchmark
+# BPRBench
 
 ## 📄 Overview
 
-**BPRBench:** the first benchmark to evaluate MMs for breast pathology report generation. BPRBench encompasses 12 critical tasks involved in breast pathology reporting and 17,597 pathologist‑annotated image–option pairs derived from 377 breast‑cancer whole‑slide images, providing a unified testbed on which we benchmarked 11 pathology-specialized multimodal large language models (MLLMs, e.g., GPT-4o) and five general-purpose multimodal foundation models (MFMs, e.g., CONCH).
+**BPRBench** is the first benchmark to evaluate MMs for breast pathology report generation. BPRBench encompasses 12 critical tasks involved in breast pathology reporting and 17,597 pathologist‑annotated image–option pairs derived from 377 breast‑cancer whole‑slide images, providing a unified testbed on which we benchmarked 11 pathology-specialized multimodal large language models (MLLMs, e.g., GPT-4o) and five general-purpose multimodal foundation models (MFMs, e.g., CONCH).
 
 ## 🚀 Quick Start
 
