@@ -122,16 +122,6 @@ class YourVLM:
 
 ## 💾 Data Format
 
-### Image Organization
-```
-breast_patches_*/
-├── IDC/           # Invasive Ductal Carcinoma
-├── DCIS/          # Ductal Carcinoma In Situ  
-├── ILC/           # Invasive Lobular Carcinoma
-├── benign_150/    # Benign tissue samples
-└── ...            # Other cancer subtypes
-```
-
 ### Results Format
 Each model generates a CSV with:
 - `file`: Image file path
