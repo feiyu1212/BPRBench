@@ -8,6 +8,18 @@
 
 ### Prerequisites
 
+#### System Requirements
+
+##### Hardware
+*   **RAM**: Minimum 256 GB RAM recommended
+*   **GPU**: NVIDIA A800 GPU
+
+##### Software & Dependencies
+The code was developed and tested on the following environment:
+*   **Operating System**: Ubuntu 22.04 LTS
+*   **CUDA Version**: 12.2
+
+
 ```bash
 # Install required packages
 pip install -r requirements.txt
