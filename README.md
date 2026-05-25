@@ -21,7 +21,7 @@ BENCHMARK_QUESTIONS_FILE=data/questions.json
 
 ## Run
 
-**CLIP / encoder models** (YAML config):
+Multimodal Embedding Models:
 
 ```bash
 python -m benchmark run --config configs/clip.yaml
