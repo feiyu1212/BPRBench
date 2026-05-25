@@ -1,0 +1,21 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  output_dir: data/results/vir2_clip_evaluation
+
+model:
+  architecture: vir2_clip
+  device: cuda
+  args:
+    checkpoint: ${VIR2_CLIP_CHECKPOINT}
+    # remove_text: false
+    # remove_visual: false
+
+eval:
+  batch_size: 512
+  num_workers: 16
+  system_prompt: N/A
+  positive_label: A
+  force_run: true
+  use_cache: false
+  extractor_repair: false

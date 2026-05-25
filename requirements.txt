@@ -1,0 +1,16 @@
+open_clip_torch==2.30.0
+torch==2.2.0
+torchvision==0.17.0
+openai==1.63.0
+pandas==2.0.0
+numpy==1.26.1
+Pillow==10.4.0
+PyYAML==6.0.2
+python-dotenv==1.0.1
+pydantic==2.10.6
+tqdm==4.67.1
+transformers==4.48.3
+sentencepiece  # required by XLMRobertaTokenizer for MUSK
+einops
+
+# pip install git+https://github.com/lilab-stanford/MUSK.git

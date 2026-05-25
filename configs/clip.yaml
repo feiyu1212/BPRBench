@@ -1,0 +1,21 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  output_dir: data/results/general_clip_evaluation
+
+model:
+  architecture: openclip
+  device: cuda
+  args:
+    # Equivalent to openai/clip-vit-large-patch14
+    arch: ViT-L-14
+    pretrained: openai
+
+eval:
+  batch_size: 512
+  num_workers: 16
+  system_prompt: N/A
+  positive_label: A
+  force_run: true
+  use_cache: false
+  extractor_repair: false

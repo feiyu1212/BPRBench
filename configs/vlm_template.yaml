@@ -1,0 +1,54 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  # output_dir will be overridden by the script
+  output_dir: data/results/vlm_temp
+
+model:
+  architecture: vlm
+  device: cpu
+  args:
+    # These placeholders are populated by the runner script.
+    provider: ${VLM_PROVIDER}
+    model: ${VLM_MODEL_NAME}
+    base_url: ${VLM_BASE_URL}
+    api_key: ${VLM_API_KEY}
+    timeout: 120
+    temperature: 0.0
+
+eval:
+  batch_size: 4
+  num_workers: 16
+  system_prompt: You are a professional pathology expert.
+  positive_label: A
+  force_run: true
+  use_cache: true
+  extractor_repair: true
+  extractor_max_retries: 1
+
+defaults:
+  # openrouter_models:
+  #   - opengvlab/internvl3-78b
+  #   - openai/gpt-5.2
+  #   - openai/chatgpt-4o-latest
+  #   - qwen/qwen3-vl-235b-a22b-instruct
+  #   - qwen/qwen2.5-vl-72b-instruct
+  #   - meta-llama/llama-4-maverick
+  #   - google/gemini-3-pro-preview
+  #   - anthropic/claude-sonnet-4.5
+  #   - x-ai/grok-4
+  #   - moonshotai/kimi-k2.5
+
+  openrouter_models:
+    - opengvlab/internvl3-78b
+    - qwen/qwen3-vl-235b-a22b-instruct
+    - qwen/qwen2.5-vl-72b-instruct
+    - meta-llama/llama-4-maverick
+    - google/gemini-3-flash-preview
+    - x-ai/grok-4.1-fast
+    - moonshotai/kimi-k2.5
+    - anthropic/claude-sonnet-4.5
+
+
+    # - openai/gpt-5.2
+    # - openai/chatgpt-4o-latest

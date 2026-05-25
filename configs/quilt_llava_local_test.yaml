@@ -1,0 +1,24 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  output_dir: data/results/quilt_llava_local_test
+
+model:
+  architecture: vlm
+  device: cpu
+  args:
+    base_url: http://0.0.0.0:8000/v1
+    api_key: empty
+    model: quilt-llava
+    provider: local
+    timeout: 300
+    temperature: 0.2
+
+eval:
+  batch_size: 512
+  num_workers: 16
+  system_prompt: You are a professional pathology expert.
+  positive_label: A
+  force_run: true
+  use_cache: false
+  extractor_repair: true

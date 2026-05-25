@@ -1,0 +1,24 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  output_dir: data/results/openrouter
+
+model:
+  architecture: vlm
+  device: cpu
+  args:
+    provider: openrouter
+    model: openai/gpt-4o-latest
+    timeout: 120
+    temperature: 0
+
+eval:
+  batch_size: 64
+  num_workers: 8
+  system_prompt: You are a professional pathology expert.
+  positive_label: A
+  force_run: true
+  use_cache: true
+  extractor_repair: true
+  extractor_max_retries: 1
+  extractor_retry_backoff_s: 0.0

@@ -1,0 +1,13 @@
+name: qllava
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pip>=23.2
+  - git
+  - requests
+  - pillow
+  - fastapi
+  - uvicorn

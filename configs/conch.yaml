@@ -1,0 +1,21 @@
+data:
+  image_dir: ${BENCHMARK_IMAGE_DIR}
+  questions_file: ${BENCHMARK_QUESTIONS_FILE}
+  output_dir: data/results/conch_evaluation
+
+model:
+  architecture: conch
+  device: cuda
+  args:
+    checkpoint: ${CONCH_CHECKPOINT}
+
+eval:
+  batch_size: 512
+  num_workers: 16
+  system_prompt: You are a professional pathology expert.
+  positive_label: A
+  force_run: true
+  use_cache: false
+  extractor_repair: true
+  extractor_max_retries: 1
+  extractor_retry_backoff_s: 0.0
