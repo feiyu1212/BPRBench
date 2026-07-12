@@ -1,0 +1,4079 @@
+[
+  {
+    "id": 1,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "Cancer Judgement"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Carcinoma"
+        ],
+        "folders": [
+          "IDC",
+          "DCIS",
+          "ILC",
+          "MC",
+          "ICC",
+          "IMPC",
+          "ADCC",
+          "MBC",
+          "IPC",
+          "EPC",
+          "AC",
+          "NETB",
+          "TC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "NonTumor"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Carcinoma": {
+        "Carcinoma": [
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 2,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive ductal carcinoma IDC",
+        "classnames": [
+          "Infiltrating duct carcinoma, NOS"
+        ],
+        "folders": [
+          "IDC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Infiltrating duct carcinoma, NOS": {
+        "Infiltrating duct carcinoma, NOS": [
+          "Infiltrating duct carcinoma, NOS",
+          "Invasive ductal carcinoma",
+          "Carcinoma, Infiltrating Duct",
+          "Carcinomas, Infiltrating Duct",
+          "Carcinoma, Invasive Ductal, Breast",
+          "Invasive Ductal Carcinoma, Breast",
+          "Carcinoma, Mammary Ductal",
+          "Carcinomas, Mammary Ductal",
+          "Mammary Ductal Carcinomas",
+          "Mammary Ductal Carcinoma",
+          "IDC",
+          "Infiltrating Ductal Carcinoma",
+          "Invasive Ductal Carcinoma, Not Otherwise Specified",
+          "infiltrating duct carcinoma NOS",
+          "IDC-NOS"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 3,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive ductal carcinoma IDC",
+        "classnames": [
+          "Infiltrating duct carcinoma, NOS"
+        ],
+        "folders": [
+          "IDC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      },
+      "Infiltrating duct carcinoma, NOS": {
+        "Infiltrating duct carcinoma, NOS": [
+          "Infiltrating duct carcinoma, NOS",
+          "Invasive ductal carcinoma",
+          "Carcinoma, Infiltrating Duct",
+          "Carcinomas, Infiltrating Duct",
+          "Carcinoma, Invasive Ductal, Breast",
+          "Invasive Ductal Carcinoma, Breast",
+          "Carcinoma, Mammary Ductal",
+          "Carcinomas, Mammary Ductal",
+          "Mammary Ductal Carcinomas",
+          "Mammary Ductal Carcinoma",
+          "IDC",
+          "Infiltrating Ductal Carcinoma",
+          "Invasive Ductal Carcinoma, Not Otherwise Specified",
+          "infiltrating duct carcinoma NOS",
+          "IDC-NOS"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      }
+    }
+  },
+  {
+    "id": 4,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive lobular carcinoma ILC",
+        "classnames": [
+          "lobular carcinoma, NOS"
+        ],
+        "folders": [
+          "ILC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "lobular carcinoma, NOS": {
+        "lobular carcinoma, NOS": [
+          "lobular carcinoma, NOS",
+          "lobular carcinoma, NOS",
+          "invasive lobular carcinoma of breast",
+          "lobular carcinomas",
+          "Carcinomas, Lobular",
+          "Lobular Carcinoma",
+          "Lobular Carcinomas",
+          "breast invasive lobular carcinoma",
+          "Lobular Breast Carcinoma",
+          "invasive lobular carcinoma",
+          "ILC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      }
+    }
+  },
+  {
+    "id": 5,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Mucinous Carcinoma MC",
+        "classnames": [
+          "mucinous adenocarcinoma"
+        ],
+        "folders": [
+          "MC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "mucinous adenocarcinoma": {
+        "mucinous adenocarcinoma": [
+          "mucinous adenocarcinoma",
+          "mucinous carcinoma",
+          "Mucinous Breast Carcinoma",
+          "Mucinous Breast cancer",
+          "breast invasive Mucinous Carcinoma",
+          "Invasive Mucinous Carcinoma of the Breast",
+          "Mucinous Carcinoma of the Breast",
+          "Breast mucinous Carcinoma",
+          "MC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      }
+    }
+  },
+  {
+    "id": 6,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive cribriform carcinoma ICC",
+        "classnames": [
+          "cribriform carcinoma, NOS"
+        ],
+        "folders": [
+          "ICC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "cribriform carcinoma, NOS": {
+        "cribriform carcinoma, NOS": [
+          "cribriform carcinoma, NOS",
+          "cribriform carcinoma",
+          "Invasive cribriform carcinoma (ICC)",
+          "ICC",
+          "breast Invasive cribriform carcinoma",
+          "Invasive cribriform carcinoma of the breast",
+          "Cribriform Carcinomas"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      }
+    }
+  },
+  {
+    "id": 7,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive micropapillary carcinoma IMPC",
+        "classnames": [
+          "Invasive micropapillary carcinoma of breast"
+        ],
+        "folders": [
+          "IMPC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Invasive micropapillary carcinoma of breast": {
+        "Invasive micropapillary carcinoma of breast": [
+          "Invasive micropapillary carcinoma of breast",
+          "Invasive micropapillary carcinoma",
+          "invasive micropapillary tumours ",
+          "IMPC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      }
+    }
+  },
+  {
+    "id": 8,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Invasive lobular carcinoma ILC",
+        "classnames": [
+          "lobular carcinoma, NOS"
+        ],
+        "folders": [
+          "ILC"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Metaplastic breast carcinoma MBC",
+        "classnames": [
+          "MBC"
+        ],
+        "folders": [
+          "MBC"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Adenoid cystic carcinoma AdCC",
+        "classnames": [
+          "ADCC"
+        ],
+        "folders": [
+          "ADCC"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "lobular carcinoma, NOS": {
+        "lobular carcinoma, NOS": [
+          "lobular carcinoma, NOS",
+          "lobular carcinoma, NOS",
+          "invasive lobular carcinoma of breast",
+          "lobular carcinomas",
+          "Carcinomas, Lobular",
+          "Lobular Carcinoma",
+          "Lobular Carcinomas",
+          "breast invasive lobular carcinoma",
+          "Lobular Breast Carcinoma",
+          "invasive lobular carcinoma",
+          "ILC"
+        ]
+      },
+      "MBC": {
+        "MBC": [
+          "Metaplastic carcinoma",
+          "metaplastic carcinoma, NOS",
+          "metaplastic carcinoma of breast and metaplastic carcinoma, NOS",
+          "metaplastic carcinomas",
+          "metaplastic breast carcinoma",
+          "Metaplastic Carcinoma of the Breast",
+          "Metaplastic Mammary Carcinoma",
+          "MBC",
+          "Metaplastic BC"
+        ]
+      },
+      "ADCC": {
+        "ADCC": [
+          "Adenoid cystic carcinoma",
+          "Adenoid cystic carcinoma of breast",
+          "Classic adenoid cystic carcinoma",
+          "Solid basaloid adenoid cystic carcinoma",
+          "Adenoid cystic carcinoma with high grade transformation",
+          "Adenoid Cystic Carcinomas",
+          "Carcinomas, Adenoid Cystic",
+          "Cystic Carcinoma, Adenoid",
+          "Cystic Carcinomas, Adenoid",
+          "Adenocystic Carcinoma",
+          "Adenocystic Carcinomas",
+          "Carcinoma, Adenocystic",
+          "Carcinomas, Adenocystic",
+          "Adenocystic Carcinoma",
+          "AdCC",
+          "ACC",
+          "Salivary Gland-Type Carcinoma of the Breast"
+        ]
+      }
+    }
+  },
+  {
+    "id": 9,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive cribriform carcinoma ICC",
+        "classnames": [
+          "cribriform carcinoma, NOS"
+        ],
+        "folders": [
+          "ICC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Metaplastic breast carcinoma MBC",
+        "classnames": [
+          "MBC"
+        ],
+        "folders": [
+          "MBC"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Invasive papillary carcinoma IPC",
+        "classnames": [
+          "IPC"
+        ],
+        "folders": [
+          "IPC"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "cribriform carcinoma, NOS": {
+        "cribriform carcinoma, NOS": [
+          "cribriform carcinoma, NOS",
+          "cribriform carcinoma",
+          "Invasive cribriform carcinoma (ICC)",
+          "ICC",
+          "breast Invasive cribriform carcinoma",
+          "Invasive cribriform carcinoma of the breast",
+          "Cribriform Carcinomas"
+        ]
+      },
+      "MBC": {
+        "MBC": [
+          "Metaplastic carcinoma",
+          "metaplastic carcinoma, NOS",
+          "metaplastic carcinoma of breast and metaplastic carcinoma, NOS",
+          "metaplastic carcinomas",
+          "metaplastic breast carcinoma",
+          "Metaplastic Carcinoma of the Breast",
+          "Metaplastic Mammary Carcinoma",
+          "MBC",
+          "Metaplastic BC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "IPC": {
+        "IPC": [
+          "Invasive papillary carcinomas ",
+          "Invasive papillary carcinoma",
+          "Invasive papillary carcinoma of the breast",
+          "Invasive Breast Carcinomas, Papillary",
+          "Invasive Breast Papillary Carcinoma",
+          "Invasive Breast papillary Carcinomas",
+          "Papillary Carcinoma of the Breast, Invasive",
+          "Invasive Mammary Papillary Carcinoma",
+          "IPC",
+          "Papillary Carcinoma, Invasive Type"
+        ]
+      }
+    }
+  },
+  {
+    "id": 10,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Adenoid cystic carcinoma AdCC",
+        "classnames": [
+          "ADCC"
+        ],
+        "folders": [
+          "ADCC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Metaplastic breast carcinoma MBC",
+        "classnames": [
+          "MBC"
+        ],
+        "folders": [
+          "MBC"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Invasive papillary carcinoma IPC",
+        "classnames": [
+          "IPC"
+        ],
+        "folders": [
+          "IPC"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "ADCC": {
+        "ADCC": [
+          "Adenoid cystic carcinoma",
+          "Adenoid cystic carcinoma of breast",
+          "Classic adenoid cystic carcinoma",
+          "Solid basaloid adenoid cystic carcinoma",
+          "Adenoid cystic carcinoma with high grade transformation",
+          "Adenoid Cystic Carcinomas",
+          "Carcinomas, Adenoid Cystic",
+          "Cystic Carcinoma, Adenoid",
+          "Cystic Carcinomas, Adenoid",
+          "Adenocystic Carcinoma",
+          "Adenocystic Carcinomas",
+          "Carcinoma, Adenocystic",
+          "Carcinomas, Adenocystic",
+          "Adenocystic Carcinoma",
+          "AdCC",
+          "ACC",
+          "Salivary Gland-Type Carcinoma of the Breast"
+        ]
+      },
+      "MBC": {
+        "MBC": [
+          "Metaplastic carcinoma",
+          "metaplastic carcinoma, NOS",
+          "metaplastic carcinoma of breast and metaplastic carcinoma, NOS",
+          "metaplastic carcinomas",
+          "metaplastic breast carcinoma",
+          "Metaplastic Carcinoma of the Breast",
+          "Metaplastic Mammary Carcinoma",
+          "MBC",
+          "Metaplastic BC"
+        ]
+      },
+      "IPC": {
+        "IPC": [
+          "Invasive papillary carcinomas ",
+          "Invasive papillary carcinoma",
+          "Invasive papillary carcinoma of the breast",
+          "Invasive Breast Carcinomas, Papillary",
+          "Invasive Breast Papillary Carcinoma",
+          "Invasive Breast papillary Carcinomas",
+          "Papillary Carcinoma of the Breast, Invasive",
+          "Invasive Mammary Papillary Carcinoma",
+          "IPC",
+          "Papillary Carcinoma, Invasive Type"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 11,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Metaplastic breast carcinoma MBC",
+        "classnames": [
+          "MBC"
+        ],
+        "folders": [
+          "MBC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Neuroendocrine tumor of the breast NETB",
+        "classnames": [
+          "NETB"
+        ],
+        "folders": [
+          "NETB"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Encapsulated papillary carcinoma, EPC",
+        "classnames": [
+          "EPC"
+        ],
+        "folders": [
+          "EPC"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "MBC": {
+        "MBC": [
+          "Metaplastic carcinoma",
+          "metaplastic carcinoma, NOS",
+          "metaplastic carcinoma of breast and metaplastic carcinoma, NOS",
+          "metaplastic carcinomas",
+          "metaplastic breast carcinoma",
+          "Metaplastic Carcinoma of the Breast",
+          "Metaplastic Mammary Carcinoma",
+          "MBC",
+          "Metaplastic BC"
+        ]
+      },
+      "NETB": {
+        "NETB": [
+          "Neuroendocrine neoplasms ",
+          "Neuroendocrine tumour ",
+          "Neuroendocrine neoplasms (NENs)",
+          "Neuroendocrine tumor, NOS",
+          "Neuroendocrine neoplasms of the breast",
+          "neuroendocrine tumors of the breast",
+          "Primary Mammary Neuroendocrine Neoplasm",
+          "Breast Neuroendocrine Tumor",
+          "NEBT"
+        ]
+      },
+      "EPC": {
+        "EPC": [
+          "Encapsulated papillary carcinoma  ",
+          "Encapsulated Papillary Carcinoma of the Breast",
+          "Encapsulated Mammary Papillary Carcinoma",
+          "EPC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 12,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Invasive papillary carcinoma IPC",
+        "classnames": [
+          "IPC"
+        ],
+        "folders": [
+          "IPC"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Neuroendocrine tumor of the breast NETB",
+        "classnames": [
+          "NETB"
+        ],
+        "folders": [
+          "NETB"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Breast apocrine carcinoma AC",
+        "classnames": [
+          "AC"
+        ],
+        "folders": [
+          "AC"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "IPC": {
+        "IPC": [
+          "Invasive papillary carcinomas ",
+          "Invasive papillary carcinoma",
+          "Invasive papillary carcinoma of the breast",
+          "Invasive Breast Carcinomas, Papillary",
+          "Invasive Breast Papillary Carcinoma",
+          "Invasive Breast papillary Carcinomas",
+          "Papillary Carcinoma of the Breast, Invasive",
+          "Invasive Mammary Papillary Carcinoma",
+          "IPC",
+          "Papillary Carcinoma, Invasive Type"
+        ]
+      },
+      "NETB": {
+        "NETB": [
+          "Neuroendocrine neoplasms ",
+          "Neuroendocrine tumour ",
+          "Neuroendocrine neoplasms (NENs)",
+          "Neuroendocrine tumor, NOS",
+          "Neuroendocrine neoplasms of the breast",
+          "neuroendocrine tumors of the breast",
+          "Primary Mammary Neuroendocrine Neoplasm",
+          "Breast Neuroendocrine Tumor",
+          "NEBT"
+        ]
+      },
+      "AC": {
+        "AC": [
+          "Apocrine adenoma",
+          "Apocrine Carcinoma of the Breast",
+          "Apocrine Adenocarcinoma",
+          "Apocrine Carcinoma, Mammary Type",
+          "AC"
+        ]
+      }
+    }
+  },
+  {
+    "id": 13,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Breast apocrine carcinoma AC",
+        "classnames": [
+          "AC"
+        ],
+        "folders": [
+          "AC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Neuroendocrine tumor of the breast NETB",
+        "classnames": [
+          "NETB"
+        ],
+        "folders": [
+          "NETB"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Encapsulated papillary carcinoma EPC",
+        "classnames": [
+          "EPC"
+        ],
+        "folders": [
+          "EPC"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "AC": {
+        "AC": [
+          "Apocrine adenoma",
+          "Apocrine Carcinoma of the Breast",
+          "Apocrine Adenocarcinoma",
+          "Apocrine Carcinoma, Mammary Type",
+          "AC"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "NETB": {
+        "NETB": [
+          "Neuroendocrine neoplasms ",
+          "Neuroendocrine tumour ",
+          "Neuroendocrine neoplasms (NENs)",
+          "Neuroendocrine tumor, NOS",
+          "Neuroendocrine neoplasms of the breast",
+          "neuroendocrine tumors of the breast",
+          "Primary Mammary Neuroendocrine Neoplasm",
+          "Breast Neuroendocrine Tumor",
+          "NEBT"
+        ]
+      },
+      "EPC": {
+        "EPC": [
+          "Encapsulated papillary carcinoma  ",
+          "Encapsulated Papillary Carcinoma of the Breast",
+          "Encapsulated Mammary Papillary Carcinoma",
+          "EPC"
+        ]
+      }
+    }
+  },
+  {
+    "id": 14,
+    "question": "What is the cancer type of this image?",
+    "tags": [
+      "Cancer Type"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Benign",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Invasive papillary carcinoma IPC",
+        "classnames": [
+          "IPC"
+        ],
+        "folders": [
+          "IPC"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Tubular carcinoma TC",
+        "classnames": [
+          "TC"
+        ],
+        "folders": [
+          "TC"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Ductal carcinoma in situ DCIS",
+        "classnames": [
+          "Ductal carcinoma, noninfiltrating, NOS"
+        ],
+        "folders": [
+          "DCIS"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue"
+        ]
+      },
+      "IPC": {
+        "IPC": [
+          "Invasive papillary carcinomas ",
+          "Invasive papillary carcinoma",
+          "Invasive papillary carcinoma of the breast",
+          "Invasive Breast Carcinomas, Papillary",
+          "Invasive Breast Papillary Carcinoma",
+          "Invasive Breast papillary Carcinomas",
+          "Papillary Carcinoma of the Breast, Invasive",
+          "Invasive Mammary Papillary Carcinoma",
+          "IPC",
+          "Papillary Carcinoma, Invasive Type"
+        ]
+      },
+      "TC": {
+        "TC": [
+          "Tubular carcinoma",
+          "invasive tubular carcinoma ",
+          "Tubular carcinoma breast",
+          "Tubular carcinoma of breast",
+          "Carcinoma, Tubular",
+          "Carcinomas, Tubular",
+          "Tubular Carcinoma",
+          "Tubular Carcinomas",
+          "Tubular Carcinoma of the Breast",
+          "Breast Tubular Carcinoma",
+          "TC",
+          "Tubule-Forming Carcinoma"
+        ]
+      },
+      "Ductal carcinoma, noninfiltrating, NOS": {
+        "Ductal carcinoma, noninfiltrating, NOS": [
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      }
+    }
+  },
+  {
+    "id": 15,
+    "question": "Does this image contain invasive breast?",
+    "tags": [
+      "Tumor Grade"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Invasive Breast"
+        ],
+        "folders": [
+          "IDC",
+          "ILC",
+          "ICC",
+          "IPC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Carcinoma in situ"
+        ],
+        "folders": [
+          "DCIS",
+          "PDCIS",
+          "TisDCIS",
+          "TisLCIS",
+          "TisPaget"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Invasive Breast": {
+        "Invasive Breast": [
+          "Invasive Breast",
+          "Invasive Breast Cancer",
+          "Invasive Carcinoma of the Breast",
+          "Infiltrating Breast Carcinoma",
+          "Infiltrating Carcinoma of the Breast",
+          "Invasive Mammary Carcinoma",
+          "Infiltrating Mammary Carcinoma"
+        ]
+      },
+      "Carcinoma in situ": {
+        "Carcinoma in situ": [
+          "Breast Carcinoma In Situ",
+          "In situ carcinoma of breast",
+          "Non-invasive breast cancer",
+          "Stage 0 breast cancer"
+        ]
+      }
+    }
+  },
+  {
+    "id": 16,
+    "question": "Does this image contain the malignant gland/tubule?",
+    "tags": [
+      "Tumor Grade"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "malignant tubule"
+        ],
+        "folders": [
+          "Tubulescore1",
+          "Tubulescore2",
+          "Tubulescore3"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "benign tubule"
+        ],
+        "folders": [
+          "BenignTubule"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "malignant tubule": {
+        "malignant tubule": [
+          "malignant tubule",
+          "malignant Glandular(Acinar)/Tubular",
+          "malignant Gland/Tubule formation",
+          "malignant Glandular/Tubule formation",
+          "malignant tubule/acinus/gland formation"
+        ]
+      },
+      "benign tubule": {
+        "benign tubule": [
+          "benign tubule",
+          "benign Glandular(Acinar)/Tubular",
+          "benign Gland/Tubule formation",
+          "benign Glandular/Tubule formation",
+          "benign tubule/acinus/gland formation"
+        ]
+      }
+    }
+  },
+  {
+    "id": 17,
+    "question": "What is the nuclear pleomorphism score in the image?",
+    "tags": [
+      "Tumor Grade"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Score 1, small regular uniform cells",
+        "classnames": [
+          "nuclear pleomorphism score 1"
+        ],
+        "folders": [
+          "Nuclearpleomorphismscore1"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Score 2, moderate increase in size and variability",
+        "classnames": [
+          "nuclear pleomorphism score 2"
+        ],
+        "folders": [
+          "Nuclearpleomorphismscore2"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Score 3, marked variation",
+        "classnames": [
+          "nuclear pleomorphism score 3"
+        ],
+        "folders": [
+          "Nuclearpleomorphismscore3"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "nuclear pleomorphism score 1": {
+        "nuclear pleomorphism score 1": [
+          "nuclear pleomorphism score 1",
+          "nuclear atypia/pleomorphism score 1",
+          "Low Nuclear Pleomorphism",
+          "well-differentiated Nuclear Pleomorphism",
+          "low-grade Nuclear Pleomorphism",
+          "Small, regular uniform cells",
+          "small uniform nuclear size"
+        ]
+      },
+      "nuclear pleomorphism score 2": {
+        "nuclear pleomorphism score 2": [
+          "nuclear pleomorphism score 2",
+          "nuclear atypia/pleomorphism score 2",
+          "mild to moderate nuclear pleomorphism",
+          "mild to moderate nuclear atypia",
+          "Moderate increase in size and variability"
+        ]
+      },
+      "nuclear pleomorphism score 3": {
+        "nuclear pleomorphism score 3": [
+          "nuclear pleomorphism score 3",
+          "nuclear atypia/pleomorphism score 3",
+          "Marked variation",
+          "severe nuclear pleomorphism",
+          "high nuclear pleomorphism",
+          "marked nuclear pleomorphism",
+          "pronounced nuclear pleomorphism",
+          "high-grade nuclear pleomorphism",
+          "severe nuclear atypia",
+          "marked nuclear atypia",
+          "irregular, markedly enlarged nuclei",
+          "large, highly irregular nuclei",
+          "highly irregular nuclear morphology"
+        ]
+      }
+    }
+  },
+  {
+    "id": 18,
+    "question": "Does this image contain mitotic figures in tumor cells?",
+    "tags": [
+      "Tumor Grade"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Mitosis"
+        ],
+        "folders": [
+          "Mitosis"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Mitosis Absent"
+        ],
+        "folders": [
+          "Mitosisabsent"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Mitosis": {
+        "Mitosis": [
+          "Mitosis",
+          "mitotic",
+          "mitotic figures",
+          "Mitotic Activity",
+          "Mitoses",
+          "M Phase, Mitotic",
+          "Mitotic M Phase",
+          "Mitotic M Phases",
+          "M Phases, Mitotic",
+          "Phase, Mitotic M",
+          "Phases, Mitotic M"
+        ]
+      },
+      "Mitosis Absent": {
+        "Mitosis Absent": [
+          "Mitosis Absent",
+          "mitotic absent",
+          "No Mitoses Observed",
+          "Mitoses Not Detected",
+          "Absence of Mitotic Figures",
+          "No Mitotic Activity",
+          "Interphase",
+          "Non-dividing Cells",
+          "Quiescence",
+          "Interphase Stages",
+          "G0/G1/G2/S phase",
+          "Non-Mitotic Phases",
+          "Resting Phase, Cell Cycle"
+        ]
+      }
+    }
+  },
+  {
+    "id": 19,
+    "question": "What does this image contain?",
+    "tags": [
+      "Lymphovascular invasion"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Lymphovascular invasion",
+        "classnames": [
+          "Lymphovascular invasion"
+        ],
+        "folders": [
+          "Lymphovascularinvasion"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Benign tissue",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Perineural invasion",
+        "classnames": [
+          "Perineural invasion"
+        ],
+        "folders": [
+          "Perineuralinvasion"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Lymphovascular invasion": {
+        "Lymphovascular invasion": [
+          "Lymphovascular invasion",
+          "lymph vascular invasion",
+          "Angiolymphatic invasion",
+          "LVI",
+          "lymph vascular space invasion",
+          "LVSI",
+          "Vascular invasion",
+          "Lymphatic invasion",
+          "Lymphatic vessel invasion"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm"
+        ]
+      },
+      "Perineural invasion": {
+        "Perineural invasion": [
+          "Perineural invasion",
+          "PNI",
+          "Perineural invasion",
+          "Neural invasion",
+          "Perineural involvement",
+          "Perineural infiltration",
+          "Nerve invasion",
+          "Neural permeation",
+          "Perineural spread",
+          "Perineural permeation",
+          "Nerve infiltration",
+          "Perineural extension"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 20,
+    "question": "What does this image contain?",
+    "tags": [
+      "Perineural invasion"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Perineural invasion",
+        "classnames": [
+          "Perineural invasion"
+        ],
+        "folders": [
+          "Perineuralinvasion"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Benign tissue",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Lymphovascular invasion",
+        "classnames": [
+          "Lymphovascular invasion"
+        ],
+        "folders": [
+          "Lymphovascularinvasion"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      },
+      "Perineural invasion": {
+        "Perineural invasion": [
+          "Perineural invasion",
+          "PNI",
+          "Perineural invasion",
+          "Neural invasion",
+          "Perineural involvement",
+          "Perineural infiltration",
+          "Nerve invasion",
+          "Neural permeation",
+          "Perineural spread",
+          "Perineural permeation",
+          "Nerve infiltration",
+          "Perineural extension"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm"
+        ]
+      },
+      "Lymphovascular invasion": {
+        "Lymphovascular invasion": [
+          "Lymphovascular invasion",
+          "lymph vascular invasion",
+          "Angiolymphatic invasion",
+          "LVI",
+          "lymph vascular space invasion",
+          "LVSI",
+          "Vascular invasion",
+          "Lymphatic invasion",
+          "Lymphatic vessel invasion"
+        ]
+      }
+    }
+  },
+  {
+    "id": 21,
+    "question": "What does this image contain?",
+    "tags": [
+      "necrosis"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Perineural invasion",
+        "classnames": [
+          "Perineural invasion"
+        ],
+        "folders": [
+          "Perineuralinvasion"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Benign tissue",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Benign"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Perineural invasion": {
+        "Perineural invasion": [
+          "Perineural invasion",
+          "PNI",
+          "Perineural invasion",
+          "Neural invasion",
+          "Perineural involvement",
+          "Perineural infiltration",
+          "Nerve invasion",
+          "Neural permeation",
+          "Perineural spread",
+          "Perineural permeation",
+          "Nerve infiltration",
+          "Perineural extension"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      },
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      }
+    }
+  },
+  {
+    "id": 22,
+    "question": "What does this image contain?",
+    "tags": [
+      "calcification"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Lymphovascular invasion",
+        "classnames": [
+          "Lymphovascular invasion"
+        ],
+        "folders": [
+          "Lymphovascularinvasion"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Perineural invasion",
+        "classnames": [
+          "Perineural invasion"
+        ],
+        "folders": [
+          "Perineuralinvasion"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Necrosis",
+        "classnames": [
+          "necrosis"
+        ],
+        "folders": [
+          "Necrosis"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Calcification",
+        "classnames": [
+          "calcification"
+        ],
+        "folders": [
+          "Calcification"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Lymphovascular invasion": {
+        "Lymphovascular invasion": [
+          "Lymphovascular invasion",
+          "lymph vascular invasion",
+          "Angiolymphatic invasion",
+          "LVI",
+          "lymph vascular space invasion",
+          "LVSI",
+          "Vascular invasion",
+          "Lymphatic invasion",
+          "Lymphatic vessel invasion"
+        ]
+      },
+      "Perineural invasion": {
+        "Perineural invasion": [
+          "Perineural invasion",
+          "PNI",
+          "Perineural invasion",
+          "Neural invasion",
+          "Perineural involvement",
+          "Perineural infiltration",
+          "Nerve invasion",
+          "Neural permeation",
+          "Perineural spread",
+          "Perineural permeation",
+          "Nerve infiltration",
+          "Perineural extension"
+        ]
+      },
+      "necrosis": {
+        "necrosis": [
+          "necrosis",
+          "Tissue necrosis",
+          "Necrotic tissue",
+          "Necrotic change",
+          "Necrotic lesion",
+          "Necrotic area",
+          "Necrotic process",
+          "Tissue death",
+          "Dead tissue"
+        ]
+      },
+      "Calcification": {
+        "calcification": [
+          "calcification",
+          "Calcinoses",
+          "Pathologic Calcification",
+          "Calcification, Pathologic",
+          "Calcinosis, Tumoral",
+          "Calcinoses, Tumoral",
+          "Tumoral Calcinoses",
+          "Tumoral Calcinosis",
+          "Microcalcification",
+          "Microcalcifications",
+          "Microcalcinosis",
+          "Microcalcinoses"
+        ]
+      }
+    }
+  },
+  {
+    "id": 23,
+    "question": "What does this image contain?",
+    "tags": [
+      "Tumor Extension"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Skin",
+        "classnames": [
+          "Skin"
+        ],
+        "folders": [
+          "SkinPresentUninvolved",
+          "SkinWithoutUlceration",
+          "T4b"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Nipple",
+        "classnames": [
+          "Nipple"
+        ],
+        "folders": [
+          "NippleDCISNotInvolve",
+          "TisPaget"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Skeletal muscle",
+        "classnames": [
+          "Skeletal muscle"
+        ],
+        "folders": [
+          "SkeletalmuscleInvolve",
+          "SkeletalmuscleFree"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Skin": {
+        "Skin": [
+          "Skin",
+          "skin tissue",
+          "Cutaneous tissue",
+          "Integument"
+        ]
+      },
+      "Nipple": {
+        "Nipple": [
+          "nipple",
+          "nipple tissue",
+          "Nipple tissue",
+          "Mammary papilla tissue",
+          "Papillary tissue"
+        ]
+      },
+      "Skeletal muscle": {
+        "Skeletal muscle": [
+          "Skeletal muscle",
+          "Skeletal muscle tissue",
+          "Striated muscle",
+          "Voluntary muscle",
+          "Musculus skeleti"
+        ]
+      }
+    }
+  },
+  {
+    "id": 24,
+    "question": "Which of the following best describes the image?",
+    "tags": [
+      "Tumor Extension"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Skin is present and uninvolved",
+        "classnames": [
+          "Skin is present and uninvolved"
+        ],
+        "folders": [
+          "SkinPresentUninvolved"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Invasive carcinoma directly invades into the dermis or epidermis without skin ulceration",
+        "classnames": [
+          "invasive carcinoma invades into the dermis without skin ulceration"
+        ],
+        "folders": [
+          "SkinWithoutUlceration"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Invasive carcinoma directly invades into the dermis or epidermis with skin ulceration(classified as pT4b)",
+        "classnames": [
+          "invasive carcinoma invades into the dermis with skin ulceration"
+        ],
+        "folders": [
+          "T4b"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Skin is present and uninvolved": {
+        "Skin is present and uninvolved": [
+          "Skin is present and uninvolved",
+          "Skin is present and free of tumor involvement",
+          "Skin is included and remains uninfiltrated by carcinoma",
+          "The sampled skin is intact with no evidence of malignancy",
+          "Skin margin is present, showing no neoplastic involvement",
+          "Skin tissue is present but demonstrates no tumor invasion",
+          "Skin is included in the specimen but is tumor-free",
+          "No pathological involvement of the present skin",
+          "Skin is present without infiltration or malignant changes",
+          "Skin sample included, with no evidence of cancerous involvement",
+          "Skin present, not invaded by any neoplastic process"
+        ]
+      },
+      "invasive carcinoma invades into the dermis without skin ulceration": {
+        "invasive carcinoma invades into the dermis without skin ulceration": [
+          "invasive carcinoma directly invades into the dermis or epidermis without skin ulceration",
+          "The invasive carcinoma extends directly into the dermis or epidermis, without ulceration",
+          "Invasive carcinoma infiltrates the dermal or epidermal layers in the absence of skin ulceration",
+          "There is direct tumor invasion into the dermis or epidermis, yet no skin ulcer is present",
+          "Invasive carcinoma shows direct dermal/epidermal involvement without any ulcerative change",
+          "The carcinoma penetrates the dermis or epidermis but does not produce an ulcer",
+          "Dermal or epidermal invasion by the tumor is evident, without associated ulceration",
+          "The tumor breaches the dermis or epidermis directly, with no ulcerative lesion observed",
+          "Invasive carcinoma extends into the superficial skin layers (dermis/epidermis) with no ulceration",
+          "Direct dermal or epidermal extension of the carcinoma is noted, unaccompanied by ulcer formation",
+          "Tumor infiltration into the dermis or epidermis occurs without any resultant skin ulcer"
+        ]
+      },
+      "invasive carcinoma invades into the dermis with skin ulceration": {
+        "invasive carcinoma invades into the dermis with skin ulceration": [
+          "invasive carcinoma directly invades into the dermis or epidermis with skin ulceration(classified as pT4b)",
+          "The invasive carcinoma extends directly into the dermis or epidermis, accompanied by skin ulceration",
+          "Invasive carcinoma infiltrates the dermal or epidermal layers with concomitant skin ulceration",
+          "The tumor directly invades the dermis or epidermis, and skin ulcers are present",
+          "There is direct extension of the invasive carcinoma into the dermis or epidermis along with skin ulcer formation",
+          "Invasive carcinoma exhibits direct infiltration into the dermal/epidermal layers, which is associated with skin ulceration",
+          "The carcinoma breaches the dermis or epidermis directly, with concurrent development of skin ulcers",
+          "Direct invasion of the dermis or epidermis by the carcinoma is noted, with skin ulceration evident",
+          "The tumor penetrates directly into the dermis or epidermis and presents with overlying skin ulceration",
+          "Invasive carcinoma shows direct dermal or epidermal invasion together with the formation of skin ulcers",
+          "There is direct tumor invasion into the skin layers (dermis/epidermis) accompanied by ulcerative changes"
+        ]
+      }
+    }
+  },
+  {
+    "id": 25,
+    "question": "Which of the following best describes the image?",
+    "tags": [
+      "Tumor Extension"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "DCIS does not involve the nipple epidermis",
+        "classnames": [
+          "DCIS does not involve the nipple epidermis"
+        ],
+        "folders": [
+          "NippleDCISNotInvolve"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "DCIS involves nipple epidermis (Paget disease of the nipple)",
+        "classnames": [
+          "DCIS involves nipple epidermis (Paget disease of the nipple)"
+        ],
+        "folders": [
+          "TisPaget"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "DCIS does not involve the nipple epidermis": {
+        "DCIS does not involve the nipple epidermis": [
+          "DCIS does not involve the nipple epidermis",
+          "There is no involvement of the nipple epidermis by DCIS",
+          "DCIS spares the epidermal layer of the nipple",
+          "The nipple epidermis is free from DCIS",
+          "DCIS is not present in the nipple epidermis",
+          "No DCIS is detected in the epidermal tissue of the nipple",
+          "The epidermis of the nipple shows no evidence of DCIS involvement",
+          "DCIS does not extend into the nipple’s epidermal layer",
+          "There is an absence of DCIS infiltration in the nipple epidermis",
+          "DCIS does not affect the nipple’s epidermis",
+          "The nipple epidermis remains uninvolved by DCIS"
+        ]
+      },
+      "DCIS involves nipple epidermis (Paget disease of the nipple)": {
+        "DCIS involves nipple epidermis (Paget disease of the nipple)": [
+          "DCIS involves nipple epidermis (Paget disease of the nipple)",
+          "DCIS involving the nipple epidermis (Paget disease of the nipple)",
+          "DCIS with involvement of the nipple epidermis, consistent with Paget disease",
+          "Nipple epidermis involved by DCIS (Paget’s disease of the nipple)",
+          "DCIS extends into the nipple epidermis (Paget disease)",
+          "DCIS with pagetoid spread to the nipple epidermis",
+          "Paget disease of the nipple associated with underlying DCIS",
+          "DCIS-related Paget disease of the nipple (epidermal involvement)",
+          "Nipple epidermal involvement by in situ carcinoma (Paget disease)",
+          "Paget’s disease of the nipple due to DCIS involvement of epidermis",
+          "Epidermal involvement of the nipple by DCIS, i.e., nipple Paget disease",
+          "DCIS present in the nipple epidermis (nipple Paget disease)"
+        ]
+      }
+    }
+  },
+  {
+    "id": 26,
+    "question": "Which of the following best describes the image?",
+    "tags": [
+      "Tumor Extension"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Skeletal muscle is free of carcinoma",
+        "classnames": [
+          "Skeletal muscle is free of carcinoma"
+        ],
+        "folders": [
+          "SkeletalmuscleFree"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Tumour involves skeletal muscle",
+        "classnames": [
+          "Tumour involves skeletal muscle"
+        ],
+        "folders": [
+          "SkeletalmuscleInvolve"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Tumour involves both skeletal muscle and chest wall (classified as pT4a)",
+        "classnames": [
+          "Tumour involves both skeletal muscle and chest wall (classified as pT4a)"
+        ],
+        "folders": [
+          "T4a"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Skeletal muscle is free of carcinoma": {
+        "Skeletal muscle is free of carcinoma": [
+          "Skeletal muscle is free of carcinoma",
+          "No carcinoma is present in the skeletal muscle",
+          "The skeletal muscle does not show any evidence of carcinoma",
+          "There is no involvement of carcinoma in the skeletal muscle",
+          "Carcinoma is absent from the skeletal muscle",
+          "The skeletal muscle is devoid of carcinoma",
+          "Skeletal muscle remains clear of carcinoma",
+          "There is an absence of carcinoma within the skeletal muscle",
+          "Carcinoma infiltration is not detected in the skeletal muscle",
+          "The skeletal muscle is unaffected by carcinoma",
+          "No evidence of carcinoma is found in the skeletal muscle"
+        ]
+      },
+      "Tumour involves skeletal muscle": {
+        "Tumour involves skeletal muscle": [
+          "Tumour involves skeletal muscle",
+          "The tumour extends into the skeletal muscle",
+          "The tumour invades the skeletal muscle",
+          "Skeletal muscle is infiltrated by the tumour",
+          "There is evidence of tumour infiltration in the skeletal muscle",
+          "Tumour presence is noted within the skeletal muscle",
+          "The skeletal muscle shows involvement by the tumour",
+          "Tumour has spread into the skeletal muscle",
+          "Involvement of the skeletal muscle by the tumour is observed",
+          "The tumour permeates the skeletal muscle"
+        ]
+      },
+      "Tumour involves both skeletal muscle and chest wall (classified as pT4a)": {
+        "Tumour involves both skeletal muscle and chest wall (classified as pT4a)": [
+          "Tumour involves both skeletal muscle and chest wall (classified as pT4a)",
+          "The tumour extends into both the skeletal muscle and the chest wall",
+          "Both the skeletal muscle and the chest wall are invaded by the tumour",
+          "Tumour infiltration is evident in both the skeletal muscle and the chest wall",
+          "The tumour has spread into the skeletal muscle as well as the chest wall",
+          "There is tumour involvement in both the skeletal muscle and the chest wall",
+          "Tumour is present within both the skeletal muscle and the chest wall",
+          "Both the skeletal muscle and chest wall show evidence of tumour invasion",
+          "The tumour permeates both the skeletal muscle and the chest wall",
+          "Tumour invasion encompasses both the skeletal muscle and the chest wall",
+          "The tumour infiltrates both the skeletal muscle and the chest wall"
+        ]
+      }
+    }
+  },
+  {
+    "id": 27,
+    "question": "Does this image contain the surgical margin?",
+    "tags": [
+      "Margin Status"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Surgical margin"
+        ],
+        "folders": [
+          "Surgicalmargin"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Non-surgical margin"
+        ],
+        "folders": [
+          "NonSurgicalmargin"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Surgical margin": {
+        "Surgical margin": [
+          "Surgical margin",
+          "Operative margin",
+          "Resection boundary",
+          "Excision margin",
+          "Surgical boundary",
+          "Margins of excision",
+          "Tumor resection margin",
+          "Margin of resection",
+          "Surgical excision boundary",
+          "Excision Margin",
+          "Excision Margins",
+          "Surgical Margins",
+          "Margins, Surgical",
+          "Margin, Surgical",
+          "Surgical Margin",
+          "Resection Margin",
+          "Margin, Resection",
+          "Margins, Resection",
+          "Resection Margins",
+          "Resection Border",
+          "Excision Border",
+          "Tumor Resection Margin",
+          "Cutting Edge",
+          "Cut Margin",
+          "Surgical Edge",
+          "ink-stained surgical margin line",
+          "ink-stained margin line",
+          "ink staining on the margin line",
+          "marked Margin",
+          "stained Margin",
+          "tagged Margin"
+        ]
+      },
+      "Non-surgical margin": {
+        "Non-surgical margin": [
+          "Tissue Margin",
+          "Tissue Edge",
+          "Specimen Edge",
+          "Specimen Margin",
+          "Peripheral Margin",
+          "Peripheral Edge",
+          "Tissue Periphery",
+          "Sample Border"
+        ]
+      }
+    }
+  },
+  {
+    "id": 28,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "Margin Status"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "Margintumor"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "MarginnonTumor"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Malignant Tumor Cells",
+          "Cancer Cells, Breast",
+          "Malignant Cancer Cells",
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm"
+        ]
+      }
+    }
+  },
+  {
+    "id": 29,
+    "question": "Does this image contain tumor-associated stroma?",
+    "tags": [
+      "TILs"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "tumor-associated stroma"
+        ],
+        "folders": [
+          "Tumorstroma"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign stroma"
+        ],
+        "folders": [
+          "Benignstroma"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "tumor-associated stroma": {
+        "tumor-associated stroma": [
+          "tumor-associated stroma",
+          "cancer-associated stroma",
+          "tumor-associated stromal tissue",
+          "cancer-associated stromal tissue",
+          "stromal cells",
+          "neoplastic stromal tissue",
+          "malignant stromal environment",
+          "carcinoma-related stroma",
+          "tumor stroma",
+          "cancer stroma",
+          "Peritumoral stroma"
+        ]
+      },
+      "Benign stroma": {
+        "Benign stroma": [
+          "Benign stroma",
+          "Benign stromal tissue",
+          "Non-tumor stroma",
+          "Non-neoplastic stromal tissue",
+          "Normal stromal environment",
+          "Non-malignant stromal region",
+          "Healthy fibrous matrix",
+          "Non-cancerous stroma"
+        ]
+      }
+    }
+  },
+  {
+    "id": 30,
+    "question": "What does this image contain?",
+    "tags": [
+      "TILs"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Mononuclear cells (Lymphocytes and Plasma cells)",
+        "classnames": [
+          "Mononuclear cell (Lymphocytes and Plasma cells)"
+        ],
+        "folders": [
+          "LymphocytesandOrplasmacells"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Tumor cells",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "TilesTumorCell"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Mononuclear cell (Lymphocytes and Plasma cells)": {
+        "Mononuclear cell (Lymphocytes and Plasma cells)": [
+          "Mononuclear cell (Lymphocytes and Plasma cells)",
+          "Lymphocytes",
+          "Plasma cells",
+          "Lymphocytes and Plasma cells",
+          "T cells",
+          "B cells",
+          "Natural Killer cells",
+          "Tumor-infiltrating lymphocytes (TILs)"
+        ]
+      },
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Malignant Tumor Cells",
+          "Cancer Cells, Breast",
+          "Malignant Cancer Cells",
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      }
+    }
+  },
+  {
+    "id": 31,
+    "question": "What does this image contain?",
+    "tags": [
+      "Lymph Nodes Metastasis"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Lymphoid tissue",
+        "classnames": [
+          "lymphoid tissue"
+        ],
+        "folders": [
+          "LymphnodenonTumor",
+          "Lymphnodetumor"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Fat",
+        "classnames": [
+          "adipose"
+        ],
+        "folders": [
+          "Lymphnodefat"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "lymphoid tissue": {
+        "lymphoid tissue": [
+          "Lymphoid Tissues",
+          "Lymphatic tissue",
+          "Tissue, Lymphoid",
+          "Tissues, Lymphoid",
+          "Lymphatic Tissue",
+          "Lymphatic Tissues",
+          "Tissue, Lymphatic",
+          "Tissues, Lymphatic",
+          "Lymphoid follicles",
+          "Germinal centers",
+          "Lymphoid parenchyma",
+          "Lymphoid stroma"
+        ]
+      },
+      "adipose": {
+        "adipose": [
+          "adipose",
+          "adipose tissue",
+          "adipocytes",
+          "fat",
+          "fat cells",
+          "Tissue,Adipose",
+          "Fatty Tissue",
+          "Tissue,Fatty"
+        ]
+      }
+    }
+  },
+  {
+    "id": 32,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "Lymph Nodes Metastasis"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Carcinoma"
+        ],
+        "folders": [
+          "Lymphnodetumor"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "LymphnodenonTumor"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Carcinoma": {
+        "Carcinoma": [
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "normal tissue",
+          "non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "benign breast tissue",
+          "Normal Mammary Gland Tissue",
+          "Normal Mammary Gland",
+          "Benign Neoplasm, Breast",
+          "Benign Tumor of Breast",
+          "Benign Mammary Tumor",
+          "Benign Mammary Neoplasm"
+        ]
+      }
+    }
+  },
+  {
+    "id": 33,
+    "question": "Which of the following best describes the image?",
+    "tags": [
+      "TNM-T Staging"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Invasive breast",
+        "classnames": [
+          "Invasive Breast"
+        ],
+        "folders": [
+          "IDC",
+          "ILC"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Carcinoma in situ",
+        "classnames": [
+          "Carcinoma in situ"
+        ],
+        "folders": [
+          "TisDCIS",
+          "TisLCIS",
+          "TisPaget"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Invasive Breast": {
+        "Invasive Breast": [
+          "Invasive Breast",
+          "Invasive Breast Cancer",
+          "Invasive Carcinoma of the Breast",
+          "Infiltrating Breast Carcinoma",
+          "Infiltrating Carcinoma of the Breast",
+          "Invasive Mammary Carcinoma",
+          "Infiltrating Mammary Carcinoma"
+        ]
+      },
+      "Carcinoma in situ": {
+        "Carcinoma in situ": [
+          "Breast Carcinoma In Situ",
+          "In situ carcinoma of breast",
+          "Non-invasive breast cancer",
+          "Stage 0 breast cancer"
+        ]
+      }
+    }
+  },
+  {
+    "id": 34,
+    "question": "Which of the following best describes the image?",
+    "tags": [
+      "TNM-T Staging"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Tis(LCIS)",
+        "classnames": [
+          "Tis(LCIS)"
+        ],
+        "folders": [
+          "TisLCIS"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Tis(DCIS)",
+        "classnames": [
+          "Tis(DCIS)"
+        ],
+        "folders": [
+          "TisDCIS",
+          "DCIS"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Tis(Paget)",
+        "classnames": [
+          "Tis(Paget)"
+        ],
+        "folders": [
+          "TisPaget"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Tis(LCIS)": {
+        "Tis(LCIS)": [
+          "Tis(LCIS)",
+          "Lobular carcinoma in situ",
+          "LCIS, Lobular Carcinoma In Situ",
+          "In situ lobular carcinoma",
+          "Non-invasive lobular carcinoma"
+        ]
+      },
+      "Tis(DCIS)": {
+        "Tis(DCIS)": [
+          "Tis(DCIS)",
+          "Ductal carcinoma in situ",
+          "Ductal carcinoma, noninfiltrating, NOS",
+          "Intraductal Carcinoma, Noninfiltrating",
+          "Carcinoma, Noninfiltrating Intraductal",
+          "Carcinomas, Noninfiltrating Intraductal",
+          "Intraductal Carcinomas, Noninfiltrating",
+          "Noninfiltrating Intraductal Carcinoma",
+          "Noninfiltrating Intraductal Carcinomas",
+          "Carcinoma, Intraductal",
+          "Carcinomas, Intraductal",
+          "Intraductal Carcinoma",
+          "Intraductal Carcinomas",
+          "Ductal Carcinoma In Situ",
+          "DCIS",
+          "In Situ Ductal Carcinoma",
+          "Non-Invasive Ductal Carcinoma",
+          "Intraductal Carcinoma In Situ"
+        ]
+      },
+      "Tis(Paget)": {
+        "Tis(Paget)": [
+          "Tis(Paget)",
+          "Paget disease of the nipple not associated with invasive carcinoma and/or carcinoma in situ(DCIS and/or LCIS) in the underlying breast parenchyma",
+          "Paget disease of the nipple unaccompanied by any invasive carcinoma or in situ carcinoma (DCIS or LCIS) within the breast parenchyma",
+          "Pure Paget’s disease of the nipple without underlying invasive or noninvasive carcinoma in the breast",
+          "Paget’s disease of the nipple, with no evidence of concomitant invasive cancer or carcinoma in situ (DCIS/LCIS) in the breast tissue",
+          "Isolated Paget’s disease of the nipple lacking associated invasive carcinoma or in situ lesions (DCIS/LCIS) in the breast",
+          "Paget disease confined to the nipple, absent any invasive or in situ breast malignancy (DCIS/LCIS) beneath",
+          "Paget’s disease of the nipple not accompanied by underlying invasive breast cancer or DCIS/LCIS",
+          "Noninvasive Paget disease of the nipple with no coexisting ductal or lobular carcinoma (in situ or invasive) in the breast parenchyma",
+          "Nipple-limited Paget’s disease without associated invasive or pre-invasive (DCIS/LCIS) breast pathology",
+          "Exclusive Paget’s disease of the nipple, free from any underlying invasive carcinoma or carcinoma in situ",
+          "Paget disease of the nipple occurring in isolation, with no detected invasive breast cancer or DCIS/LCIS"
+        ]
+      }
+    }
+  },
+  {
+    "id": 35,
+    "question": "Does this image show extension to the chest wall?",
+    "tags": [
+      "TNM-T Staging"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "T4a"
+        ],
+        "folders": [
+          "T4a"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Skeletal muscle is free of carcinoma"
+        ],
+        "folders": [
+          "SkeletalmuscleFree"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "T4a": {
+        "T4a": [
+          "T4a",
+          "Extension to chest wall (does not include pectoralis  muscle invasion only)",
+          "Tumor extends to the chest wall (excluding isolated pectoralis muscle involvement)",
+          "Invasion into the chest wall proper (not just into the pectoralis muscle)",
+          "Chest wall extension, excluding pectoralis muscle-only invasion",
+          "Tumor infiltration of the chest wall (does not apply to pectoralis muscle alone)",
+          "Spread beyond the breast tissue to involve the chest wall (not counting sole invasion of the pectoralis muscle)",
+          "Direct extension to the chest wall (pec muscle-only infiltration is not included)",
+          "Chest wall involvement beyond simple pectoralis muscle invasion",
+          "Tumor encroachment into the chest wall structures (excluding purely pectoralis muscle infiltration)",
+          "Extension past the breast into the chest wall, without limiting to muscle-only invasion",
+          "Involvement of the chest wall (beyond isolated pectoralis muscle invasion)"
+        ]
+      },
+      "Skeletal muscle is free of carcinoma": {
+        "Skeletal muscle is free of carcinoma": [
+          "Skeletal muscle is free of carcinoma",
+          "No carcinoma is present in the skeletal muscle",
+          "The skeletal muscle does not show any evidence of carcinoma",
+          "There is no involvement of carcinoma in the skeletal muscle",
+          "Carcinoma is absent from the skeletal muscle",
+          "The skeletal muscle is devoid of carcinoma",
+          "Skeletal muscle remains clear of carcinoma",
+          "There is an absence of carcinoma within the skeletal muscle",
+          "Carcinoma infiltration is not detected in the skeletal muscle",
+          "The skeletal muscle is unaffected by carcinoma",
+          "No evidence of carcinoma is found in the skeletal muscle"
+        ]
+      }
+    }
+  },
+  {
+    "id": 36,
+    "question": "Does this image show extension to the skin?",
+    "tags": [
+      "TNM-T Staging"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "T4b"
+        ],
+        "folders": [
+          "T4b"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Skin is present and uninvolved"
+        ],
+        "folders": [
+          "SkinPresentUninvolved"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "T4b": {
+        "T4b": [
+          "T4b",
+          "Ulceration, ipsilateral satellite skin nodules, or skin oedema (including peau d’orange)",
+          "Ulcerative lesions, ipsilateral satellite nodules, or dermal edema (including peau d’orange)",
+          "Skin ulceration, same-side satellite cutaneous nodules, or skin swelling (peau d’orange included)",
+          "Ulceration, ipsilateral superficial nodules, or edema of the skin (encompassing peau d’orange)",
+          "Ulceration with satellite skin lesions on the same side, or edema of the breast skin (including peau d’orange)",
+          "Open sores, ipsilateral peripheral skin nodules, or localized skin edema (notably peau d’orange)",
+          "Dermal ulceration, satellite nodules on the ipsilateral side, or swelling of the skin (including the orange peel appearance)",
+          "Ulcers, ipsilateral skin nodules, or skin oedema (peau d’orange appearance included)",
+          "Ulcerative changes, same-side cutaneous satellite nodules, or oedema (featuring peau d’orange)",
+          "Skin breakdown (ulceration), ipsilateral small skin nodules, or lymphatic edema (such as peau d’orange)",
+          "Ulceration, ipsilateral cutaneous satellites, or edematous skin changes (including peau d’orange)"
+        ]
+      },
+      "Skin is present and uninvolved": {
+        "Skin is present and uninvolved": [
+          "Skin is present and uninvolved",
+          "Skin is present and free of tumor involvement",
+          "Skin is included and remains uninfiltrated by carcinoma",
+          "The sampled skin is intact with no evidence of malignancy",
+          "Skin margin is present, showing no neoplastic involvement",
+          "Skin tissue is present but demonstrates no tumor invasion",
+          "Skin is included in the specimen but is tumor-free",
+          "No pathological involvement of the present skin",
+          "Skin is present without infiltration or malignant changes",
+          "Skin sample included, with no evidence of cancerous involvement",
+          "Skin present, not invaded by any neoplastic process"
+        ]
+      }
+    }
+  },
+  {
+    "id": 37,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "Her2"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "Her22AComplete",
+          "Her22BIncomplete"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Her21BNocancer"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Malignant Tumor Cells",
+          "Cancer Cells, Breast",
+          "Malignant Cancer Cells",
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal tissue",
+          "Non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "Benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 38,
+    "question": "Which of the following best describes HER2 membrane staining completeness?",
+    "tags": [
+      "Her2"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Complete (circumferential)",
+        "classnames": [
+          "Complete HER2 membrane staining"
+        ],
+        "folders": [
+          "Her22AComplete"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Incomplete (non-circumferential)",
+        "classnames": [
+          "Incomplete HER2 membrane staining"
+        ],
+        "folders": [
+          "Her22BIncomplete"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Complete HER2 membrane staining": {
+        "Complete HER2 membrane staining": [
+          "Complete HER2 membrane staining",
+          "Complete circumferential HER2 membrane staining",
+          "Uniform, complete HER2 membranous rim",
+          "Continuous, encircling HER2 membrane staining",
+          "Ring-like, circumferential HER2 membrane reactivity",
+          "Chicken-wire” pattern of complete HER2 membranous staining",
+          "Fully circumferential HER2 membrane contour",
+          "Diffuse, continuous HER2 membranous rim around the cell",
+          "Complete, continuous HER2 membrane outline",
+          "Entire perimeter shows HER2 membranous staining",
+          "Circumferential, uninterrupted HER2 membrane signal",
+          "Globally complete HER2 membrane staining across tumor cells",
+          "Encircling, homogeneous HER2 membranous staining",
+          "Complete membrane staining for HER2, regardless of intensity",
+          "Continuous circumferential HER2 staining is readily appreciable",
+          "Fully developed circumferential HER2 membranous pattern"
+        ]
+      },
+      "Incomplete HER2 membrane staining": {
+        "Incomplete HER2 membrane staining": [
+          "Incomplete HER2 membrane staining",
+          "Incomplete HER2 membrane staining (non-circumferential)",
+          "Discontinuous HER2 membranous staining",
+          "Partial HER2 membrane rim; not encircling",
+          "Segmental HER2 membranous staining only",
+          "Patchy, non-circumferential HER2 membrane reactivity",
+          "HER2 membrane staining present but not circumferential",
+          "Intermittent HER2 membranous outline (gaps in the rim)",
+          "Focal HER2 membranous staining without complete ring",
+          "Non-uniform HER2 membrane contour; discontinuous edges",
+          "Incomplete HER2 membrane signal along cell perimeter",
+          "Non-circumferential HER2 staining confirmed",
+          "Irregular, broken HER2 membranous staining pattern",
+          "Partial peripheral HER2 staining (no full circumference)",
+          "Non-encircling HER2 membranous staining pattern"
+        ]
+      }
+    }
+  },
+  {
+    "id": 39,
+    "question": "Which of the following best describes HER2 membrane staining intensity?",
+    "tags": [
+      "Her2"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "None",
+        "classnames": [
+          "None HER2 membrane staining"
+        ],
+        "folders": [
+          "Her23ANone"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Faint",
+        "classnames": [
+          "Faint HER2 membrane staining"
+        ],
+        "folders": [
+          "Her23BFaint"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "Weak",
+        "classnames": [
+          "Weak HER2 membrane staining"
+        ],
+        "folders": [
+          "Her23CWeak"
+        ]
+      },
+      {
+        "label": "D",
+        "text": "Moderate",
+        "classnames": [
+          "Moderate HER2 membrane staining"
+        ],
+        "folders": [
+          "Her23DModerate"
+        ]
+      },
+      {
+        "label": "E",
+        "text": "Strong",
+        "classnames": [
+          "Strong HER2 membrane staining"
+        ],
+        "folders": [
+          "Her23EStrong"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "None HER2 membrane staining": {
+        "None HER2 membrane staining": [
+          "None HER2 membrane staining",
+          "No HER2 membrane staining (intensity 0)",
+          "Absent HER2 membranous immunoreactivity",
+          "No detectable HER2 membrane signal in tumor cells",
+          "No HER2 membranous staining",
+          "No visible HER2 membrane reactivity",
+          "HER2 membranous staining absent throughout"
+        ]
+      },
+      "Faint HER2 membrane staining": {
+        "Faint HER2 membrane staining": [
+          "Faint HER2 membrane staining",
+          "Barely perceptible HER2 membrane staining",
+          "Incomplete and faint HER2 membranous reactivity",
+          "Very faint HER2 membranous blush, hardly discernible",
+          "Trace-level HER2 membrane staining at high power",
+          "Subtle HER2 membrane tint without convincing rim",
+          "Barely visible HER2 membranous signal",
+          "Dim, patchy HER2 membrane staining"
+        ]
+      },
+      "Weak HER2 membrane staining": {
+        "Weak HER2 membrane staining": [
+          "Weak HER2 membrane staining",
+          "Low-intensity HER2 membranous staining",
+          "Light but definite HER2 membranous reactivity",
+          "Weak, uneven HER2 membrane rim",
+          "Subdued HER2 membrane intensity",
+          "Pale but discernible HER2 membrane signal",
+          "Weak HER2 staining"
+        ]
+      },
+      "Moderate HER2 membrane staining": {
+        "Moderate HER2 membrane staining": [
+          "Moderate HER2 membrane staining",
+          "Intermediate-intensity HER2 membranous staining",
+          "Moderately strong HER2 membrane staining",
+          "Moderate, uniform HER2 membranous rim",
+          "Intermediate HER2 membrane reactivity across tumor cells",
+          "Moderately intense HER2 membrane signal, clearly visible",
+          "Definite, intermediate-strength HER2 membrane staining"
+        ]
+      },
+      "Strong HER2 membrane staining": {
+        "Strong HER2 membrane staining": [
+          "Strong HER2 membrane staining",
+          "Intense HER2 membrane staining",
+          "Robust, crisp HER2 membranous rim",
+          "Bright, saturated HER2 membrane staining visible",
+          "Dense HER2 membranous staining",
+          "High-intensity, uniform HER2 membrane reactivity"
+        ]
+      }
+    }
+  },
+  {
+    "id": 40,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "ER"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "Er2APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Er1BNocancer"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal tissue",
+          "Non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "Benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 41,
+    "question": "Which of the following best describes this Estrogen Receptor (ER) IHC image?",
+    "tags": [
+      "ER"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "ER-positive staining",
+        "classnames": [
+          "ER-positive staining"
+        ],
+        "folders": [
+          "Er2APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "ER-negative staining",
+        "classnames": [
+          "ER-negative staining"
+        ],
+        "folders": [
+          "Er2BNegative"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "ER-positive staining": {
+        "ER-positive staining": [
+          "Tumor cell nucleus shows ER-positive staining",
+          "Tumor cell nucleus exhibits ER positivity",
+          "This tumor cell shows positive nuclear staining for ER",
+          "ER immunoreactivity is present in this tumor cell nucleus",
+          "ER staining is observed in the nucleus of this tumor cell"
+        ]
+      },
+      "ER-negative staining": {
+        "ER-negative staining": [
+          "This tumor cell nucleus shows no ER staining",
+          "This tumor cell nucleus lacks ER immunoreactivity",
+          "No ER nuclear staining is observed in this tumor cell",
+          "This individual tumor cell does not exhibit ER positivity",
+          "ER immunostaining is absent in this tumor cell nucleus",
+          "No ER-specific signal is detected in this tumor cell nucleus",
+          "This cell fails to show ER nuclear immunoreactivity"
+        ]
+      }
+    }
+  },
+  {
+    "id": 42,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "PR"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "Pr2APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Pr1BNocancer"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal tissue",
+          "Non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "Benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 43,
+    "question": "Which of the following best describes this Progesterone Receptor (PR) IHC image?",
+    "tags": [
+      "PR"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "PR-positive staining",
+        "classnames": [
+          "PR-positive staining"
+        ],
+        "folders": [
+          "Pr2APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "PR-negative staining",
+        "classnames": [
+          "PR-negative staining"
+        ],
+        "folders": [
+          "Pr2BNegative"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "PR-positive staining": {
+        "PR-positive staining": [
+          "Tumor cell nucleus shows PR-positive staining",
+          "Tumor cell nucleus exhibits PR positivity",
+          "This tumor cell shows positive nuclear staining for PR",
+          "PR immunoreactivity is present in this tumor cell nucleus",
+          "PR staining is observed in the nucleus of this tumor cell"
+        ]
+      },
+      "PR-negative staining": {
+        "PR-negative staining": [
+          "This tumor cell nucleus shows no PR staining",
+          "This tumor cell nucleus lacks PR immunoreactivity",
+          "No PR nuclear staining is observed in this tumor cell",
+          "This individual tumor cell does not exhibit PR positivity",
+          "PR immunostaining is absent in this tumor cell nucleus",
+          "No PR-specific signal is detected in this tumor cell nucleus",
+          "This cell fails to show PR nuclear immunoreactivity"
+        ]
+      }
+    }
+  },
+  {
+    "id": 44,
+    "question": "Does this image contain cancer?",
+    "tags": [
+      "ki67"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes",
+        "classnames": [
+          "Malignant Tumor Cells"
+        ],
+        "folders": [
+          "Ki672APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "No",
+        "classnames": [
+          "Benign"
+        ],
+        "folders": [
+          "Ki671BNocancer"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Malignant Tumor Cells": {
+        "Malignant Tumor Cells": [
+          "Breast Carcinoma Cells",
+          "Mammary Tumor Cells",
+          "Mammary Carcinoma Cells",
+          "Tumor Cells, Mammary",
+          "Breast Cancer Cells",
+          "Mammary Cancer Cells",
+          "Malignant Mammary Tumor Cells",
+          "Human Mammary Cancer Cells",
+          "Human Breast Cancer Cells",
+          "Breast Neoplastic Cells",
+          "Malignant Breast Neoplastic Cells",
+          "Human Mammary Tumor Cells",
+          "Human Breast Tumor Cells",
+          "carcinoma",
+          "Breast Cancer",
+          "Cancer, Breast",
+          "Cancer of Breast",
+          "Cancer of the Breast",
+          "Malignant Neoplasm of Breast",
+          "Breast Malignant Neoplasm",
+          "Breast Malignant Neoplasms",
+          "Malignant Tumor of Breast",
+          "Breast Malignant Tumor",
+          "Breast Malignant Tumors",
+          "Mammary Cancer",
+          "Cancer, Mammary",
+          "Cancers, Mammary",
+          "Mammary Cancers",
+          "Breast Carcinoma",
+          "Breast Carcinomas",
+          "Carcinoma, Breast",
+          "Carcinomas, Breast",
+          "Mammary Carcinoma, Human",
+          "Carcinoma, Human Mammary",
+          "Carcinomas, Human Mammary",
+          "Human Mammary Carcinomas",
+          "Mammary Carcinomas, Human",
+          "Human Mammary Carcinoma",
+          "Breast Neoplasm, Malignant",
+          "Malignant Mammary Neoplasm"
+        ]
+      },
+      "Benign": {
+        "Benign": [
+          "Benign tissue",
+          "Non-malignant tissue",
+          "Normal breast tissue",
+          "Normal tissue",
+          "Non-neoplastic tissue",
+          "Unremarkable tissue",
+          "Histologically unremarkable",
+          "Within normal limits (WNL)",
+          "Normal histology",
+          "Benign breast tissue"
+        ]
+      }
+    }
+  },
+  {
+    "id": 45,
+    "question": "Which of the following best describes this Ki-67 IHC image?",
+    "tags": [
+      "ki67"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Ki-67-positive staining",
+        "classnames": [
+          "Ki-67-positive staining"
+        ],
+        "folders": [
+          "Ki672APositive"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "Ki-67-negative staining",
+        "classnames": [
+          "Ki-67-negative staining"
+        ],
+        "folders": [
+          "Ki672BNegative"
+        ]
+      }
+    ],
+    "correct_type": "max",
+    "prompt": {
+      "Ki-67-positive staining": {
+        "Ki-67-positive staining": [
+          "Tumor cell nucleus shows Ki-67-positive staining",
+          "Tumor cell nucleus exhibits Ki-67 positivity",
+          "This tumor cell shows positive nuclear staining for Ki-67",
+          "Ki-67 immunoreactivity is Present in this tumor cell nucleus",
+          "Ki-67 staining is observed in the nucleus of this tumor cell"
+        ]
+      },
+      "Ki-67-negative staining": {
+        "Ki-67-negative staining": [
+          "This tumor cell nucleus shows no Ki-67 staining",
+          "This tumor cell nucleus lacks Ki-67 immunoreactivity",
+          "No Ki-67 nuclear staining is observed in this tumor cell",
+          "This individual tumor cell does not exhibit Ki-67 positivity",
+          "Ki-67 immunostaining is absent in this tumor cell nucleus",
+          "No Ki-67-specific signal is detected in this tumor cell nucleus",
+          "This cell fails to show Ki-67 nuclear immunoreactivity"
+        ]
+      }
+    }
+  }
+]

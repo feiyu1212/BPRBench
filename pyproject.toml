@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bprbench"
+version = "3.1.0"
+description = "BPRBench: a clinically grounded benchmark for Multimodal Models in breast pathology"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.26.1",
+    "Pillow>=10.4.0",
+    "PyYAML>=6.0.2",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.10.6",
+    "tqdm>=4.67.1",
+]
+
+[project.optional-dependencies]
+vlm = ["openai>=1.63.0"]
+# PyTorch is intentionally omitted here. Install it separately (conda or
+# https://download.pytorch.org) before using local CLIP/MME models — see README.
+clip = [
+    "open_clip_torch>=2.30.0",
+    "transformers>=4.48.3,<5",
+    "sentencepiece",
+    "einops",
+    "timm",
+    "ftfy",
+    "regex",
+]
+server = ["fastapi", "uvicorn", "requests"]
+all = ["bprbench[vlm,clip,server]"]
+
+[project.scripts]
+bprbench = "benchmark.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["benchmark*"]
+
+[tool.setuptools.package-data]
+"benchmark.vir2_clip" = ["model_configs/*.json", "biomedbert_large/*"]

@@ -1,0 +1,15 @@
+{
+  "embed_dim": 1280,
+  "vision_cfg": {
+    "hf_model_name_or_path": "Virchow2",
+    "virchow2_special_configs": true
+  },
+  "text_cfg": {
+    "hf_model_name": "biomedbert_large",
+    "hf_tokenizer_name": "biomedbert_large",
+    "hf_proj_type": "mlp",
+    "hf_pooler_type": "cls_last_hidden_state_pooler",
+    "context_length": 77
+},
+  "custom_text": true
+}

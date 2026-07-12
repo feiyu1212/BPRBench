@@ -1,0 +1,22 @@
+data:
+  image_dir: data/sample_dataset/images
+  questions_file: data/sample_dataset/questions.json
+  output_dir: data/results/mllm_api
+
+model:
+  architecture: vlm
+  device: cpu
+  args:
+    provider: openrouter
+    timeout: 60
+    temperature: 0.0
+
+eval:
+  batch_size: 8
+  num_workers: 4
+  system_prompt: ""
+  force_run: true
+  use_cache: false
+  # Disabled to minimize external dependencies for the quickstart smoke test;
+  # the default VLM raw output is parsed directly without an auxiliary extractor.
+  extractor_repair: false
