@@ -8,39 +8,10 @@ Structured around clinical decision workflows, BPRBench decomposes 16 core repor
 
 ---
 
-## 🚀 1. Test MLLMs
 
-Evaluates API-based MLLMs (via OpenRouter) and the local Quilt-LLaVA on the sample dataset.
+## 1. Test MMEs
 
-### A. API-based MLLMs (OpenRouter)
-
-```bash
-# 1. Install VLM dependencies
-pip install -e ".[vlm]"
-# 2. Set your API Key and Run
-export OPENROUTER_BASE_URL="https://openrouter.ai/api/v1"
-export OPENROUTER_API_KEY="your_openrouter_api_key"
-
-bash scripts/run_mllm_api.sh 3          # only the first 3 questions
-# bash scripts/run_mllm_api.sh          # full run
-```
-
-### B. Local MLLM (Quilt-LLaVA)
-
-Quilt-LLaVA runs in an isolated conda environment, and its weights auto-download on first run.
-
-```bash
-# 1. Create the environment
-bash scripts/setup_envs.sh qllava
-# 2. Run
-bash scripts/run_mllm_qllava.sh
-```
-
----
-
-## 🖥️ 2. Test MMEs
-
-Running the local MME encoders (CLIP, Vir2-CLIP, CONCH, MUSK, PathGen, QuiltNet) requires specific dependencies. Wrapper scripts automatically handle environment activation, weight discovery, and execution.
+Running the local MMEs (CLIP, Vir2-CLIP, CONCH, MUSK, PathGen, QuiltNet) requires specific dependencies. Wrapper scripts automatically handle environment activation, weight discovery, and execution.
 
 ### Test Vir2-CLIP  (quick standalone example)
 
@@ -70,7 +41,37 @@ bash scripts/run_mme_local.sh conch
 
 ---
 
-## 📂 3. Evaluating on a Custom Dataset
+## 2. Test MLLMs
+
+Evaluates API-based MLLMs (via OpenRouter) and the local Quilt-LLaVA on the sample dataset.
+
+### A. API-based MLLMs (OpenRouter)
+
+```bash
+# 1. Install VLM dependencies
+pip install -e ".[vlm]"
+# 2. Set your API Key and Run
+export OPENROUTER_BASE_URL="https://openrouter.ai/api/v1"
+export OPENROUTER_API_KEY="your_openrouter_api_key"
+
+bash scripts/run_mllm_api.sh 3          # only the first 3 questions
+# bash scripts/run_mllm_api.sh          # full run
+```
+
+### B. Local MLLM (Quilt-LLaVA)
+
+Quilt-LLaVA runs in an isolated conda environment, and its weights auto-download on first run.
+
+```bash
+# 1. Create the environment
+bash scripts/setup_envs.sh qllava
+# 2. Run
+bash scripts/run_mllm_qllava.sh
+```
+
+---
+
+## 3. Evaluating on a Custom Dataset
 To evaluate models on any dataset, override the dataset environment variables before running any benchmark command:
 
 ```bash
@@ -80,7 +81,7 @@ export BENCHMARK_QUESTIONS_FILE=/path/to/questions.json
 
 ---
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 
 - **`ImportError: vir2_clip / conch / musk not installed`**: Ensure you ran `bash scripts/setup_envs.sh main custom` and activated the correct conda environment (`bpr_main` or `bpr_custom`).
 - **Hugging Face `401/403` Errors**: You are trying to download a gated model (CONCH, MUSK, PathGen). Visit the model's page on Hugging Face, accept the terms, and run `huggingface-cli login`.

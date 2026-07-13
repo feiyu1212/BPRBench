@@ -97,14 +97,14 @@ class DefaultsConfig(BaseModel):
         default_factory=lambda: [
             "openai/gpt-5",
             "openai/gpt-4o",
-            "google/gemini-3-pro-preview",
+            # "google/gemini-3-pro-preview",  # deprecated on OpenRouter
             "qwen/qwen3.5-397b-a17b",
             "qwen/qwen3-vl-32b-instruct",
             "meta-llama/llama-4-maverick",
-            "opengvlab/internvl3.5-78b",
+            # "opengvlab/internvl3.5-78b",  # deprecated on OpenRouter
             "anthropic/claude-sonnet-4.5",
-            "x-ai/grok-4",
-            "moonshotai/kimi-2.5",
+            # "x-ai/grok-4",  # deprecated on OpenRouter
+            # "moonshotai/kimi-2.5",  # deprecated on OpenRouter
         ]
     )
     # Vendor pricing in USD per token, aligned with the models reported in the
