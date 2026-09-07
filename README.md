@@ -6,8 +6,9 @@ Structured around clinical decision workflows, BPRBench decomposes 16 core repor
 
 > **Data Access:** For instructions on reviewing the full dataset, see the [Data Access Guide](docs/data_access_guide.md).<br>**Sample Dataset:** BPRBench includes a small-scale sample dataset (`data/sample_dataset/`) to facilitate streamlined workflow validation.
 
----
+**Requirements:** Linux (Ubuntu 20.04 tested), Python 3.10, conda. Local MMEs and Quilt-LLaVA need an NVIDIA GPU. See [Software Requirements](docs/software_requirements.md) for tested versions, install/runtime, and expected output.
 
+---
 
 ## 1. Test MMEs
 
