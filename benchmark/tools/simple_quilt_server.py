@@ -26,7 +26,11 @@ try:
     from llava.model.builder import load_pretrained_model
     from llava.utils import disable_torch_init
 except ImportError:
-    print("Error: Please install quilt-llava dependencies.")
+    print(
+        "Error: quilt-llava is not installed. Run `bash scripts/setup_env.sh` "
+        "to create the unified `bprbench` environment (which installs "
+        "quilt-llava with --no-deps), then `conda activate bprbench`."
+    )
     raise SystemExit(1)
 
 

@@ -8,6 +8,9 @@ version = "3.1.0"
 description = "BPRBench: a clinically grounded benchmark for Multimodal Models in breast pathology"
 readme = "README.md"
 requires-python = ">=3.10"
+# Core runtime deps. The full model/server/VLM stack (PyTorch, OpenCLIP,
+# transformers, openai, fastapi, …) is provided by the unified conda env in
+# `environment.yml` via `scripts/setup_env.sh` — see README.
 dependencies = [
     "pandas>=2.0.0",
     "numpy>=1.26.1",
@@ -17,22 +20,6 @@ dependencies = [
     "pydantic>=2.10.6",
     "tqdm>=4.67.1",
 ]
-
-[project.optional-dependencies]
-vlm = ["openai>=1.63.0"]
-# PyTorch is intentionally omitted here. Install it separately (conda or
-# https://download.pytorch.org) before using local CLIP/MME models — see README.
-clip = [
-    "open_clip_torch>=2.30.0",
-    "transformers>=4.48.3,<5",
-    "sentencepiece",
-    "einops",
-    "timm",
-    "ftfy",
-    "regex",
-]
-server = ["fastapi", "uvicorn", "requests"]
-all = ["bprbench[vlm,clip,server]"]
 
 [project.scripts]
 bprbench = "benchmark.cli:main"

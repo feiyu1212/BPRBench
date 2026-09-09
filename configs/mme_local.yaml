@@ -17,6 +17,6 @@ eval:
   system_prompt: ""
   force_run: true
   use_cache: false
-  extractor_repair: true
-  extractor_max_retries: 1
-  extractor_retry_backoff_s: 0.0
+  # extractor_repair / extractor_max_retries / extractor_retry_backoff_s are
+  # VLM-only params; this config targets CLIP encoders, so they stay false/default.
+  extractor_repair: false

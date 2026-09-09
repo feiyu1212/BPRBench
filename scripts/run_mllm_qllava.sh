@@ -28,7 +28,7 @@ STARTUP_TIMEOUT="${QLLAVA_STARTUP_TIMEOUT:-3600}"
 BASE_URL="http://${HOST}:${PORT}/v1"
 READY_URL="http://${HOST}:${PORT}/docs"
 
-# Activate the isolated qllava env.
+# Activate the unified bprbench env.
 CONDA_BASE="$(conda info --base 2>/dev/null || true)"
 if [ -z "$CONDA_BASE" ]; then
     echo "ERROR: conda not found on PATH." >&2
@@ -37,7 +37,7 @@ fi
 # shellcheck disable=SC1091
 source "${CONDA_BASE}/etc/profile.d/conda.sh"
 set +u
-conda activate bpr_qllava
+conda activate bprbench
 set -u
 export PYTHONNOUSERSITE=1
 
@@ -46,7 +46,7 @@ mkdir -p "$(dirname "$LOG")"
 
 echo "$SEP"
 echo "  Quilt-LLaVA auto-runner"
-echo "  Env        : bpr_qllava"
+echo "  Env        : bprbench"
 echo "  Model path : ${MODEL_PATH}"
 echo "  Server     : ${BASE_URL}  (device=${DEVICE})"
 echo "  Server log : ${LOG}"

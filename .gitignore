@@ -75,7 +75,7 @@ checkpoints/
 weights/
 artifacts/
 
-# --- Third-party repos cloned by scripts/setup_envs.sh (CONCH, MUSK, quilt-llava) ---
+# --- Third-party repos (e.g. local clones of CONCH / MUSK / quilt-llava, if any) ---
 third_party/
 
 # --- Local dataset (override via BENCHMARK_IMAGE_DIR) ---

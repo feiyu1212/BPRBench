@@ -203,65 +203,6 @@ class _ClipAdapterBase(BaseInference, ABC):
 
         return rows
 
-    def predict_from_tensors(
-        self,
-        image_tensors: torch.Tensor,
-        options: List[Dict[str, Any]],
-        correct_type: str = "max",
-    ) -> List[PredictionRecord]:
-        """
-        Predict from pre-loaded image tensors (skipping DataLoader/disk I/O).
-        Used for efficiency benchmarking so inference time reflects pure GPU compute.
-        image_tensors: (N_samples, C, H, W) preprocessed and on self.torch_device.
-        """
-        if image_tensors is None or image_tensors.numel() == 0:
-            return []
-        correct_type = str(correct_type).lower()
-        if correct_type not in {"max", "min"}:
-            correct_type = "max"
-
-        import time as _time
-
-        start_time = _time.time()
-        unique_labels, grouped_texts = _collect_candidates_grouped(options)
-        if not unique_labels:
-            return []
-
-        with torch.no_grad():
-            prototypes: List[torch.Tensor] = []
-            for texts in grouped_texts:
-                embs = self._encode_text(texts)
-                avg_emb = embs.mean(dim=0, keepdim=True)
-                avg_emb = F.normalize(avg_emb, dim=-1)
-                prototypes.append(avg_emb)
-            text_emb = torch.cat(prototypes, dim=0)
-
-            img_emb = self._encode_image(image_tensors)
-            sample_embs = F.normalize(img_emb, dim=-1)
-            sims = sample_embs @ text_emb.T
-
-        if correct_type == "min":
-            idxs = torch.argmin(sims, dim=1)
-        else:
-            idxs = torch.argmax(sims, dim=1)
-
-        num_samples = image_tensors.shape[0]
-        latency_per_sample = (_time.time() - start_time) / max(num_samples, 1)
-        rows: List[PredictionRecord] = []
-        for i in range(num_samples):
-            idx_i = idxs[i].item()
-            pred = unique_labels[idx_i]
-            raw = f"score={sims[i, idx_i].item():.6f}|prototype_label={pred}"
-            rows.append(
-                PredictionRecord(
-                    sample_id=f"sample_{i}",
-                    pred_label=pred,
-                    raw_output=raw,
-                    latency_s=latency_per_sample,
-                )
-            )
-        return rows
-
 
 @register_model("clip_openclip")
 @register_model("openclip")
@@ -312,8 +253,9 @@ class Vir2Adapter(_ClipAdapterBase):
         except ImportError as exc:
             raise RuntimeError(
                 "Vir2_CLIP is not available. It ships inside this repo as the "
-                "`benchmark.vir2_clip` subpackage; run `pip install -e \".[clip]\"` "
-                "to install it."
+                "`benchmark.vir2_clip` subpackage; run `bash scripts/setup_env.sh` "
+                "to create the unified `bprbench` environment and install the "
+                "benchmark package."
             ) from exc
 
         self.tokenizer = get_vir2_clip_tokenizer()

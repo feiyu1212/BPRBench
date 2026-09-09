@@ -79,7 +79,7 @@ def _import_hf_hub():
         print(
             "ERROR: `huggingface_hub` is not installed.\n"
             "  Install it with:  pip install huggingface_hub\n"
-            "  (it is already available inside the bpr_main / bpr_custom envs).",
+            "  (it is already available inside the bprbench env).",
             file=sys.stderr,
         )
         return False
@@ -119,7 +119,7 @@ def download_vir2() -> str:
     except ImportError:
         return (
             "FAILED: `gdown` is not installed. Install it with "
-            "`pip install gdown` (available in the bpr_main / bpr_custom envs), "
+            "`pip install gdown` (available in the bprbench env), "
             "then re-run."
         )
     VIR2_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -49,29 +49,32 @@ find_ckpt() {
     exit 1
 }
 
-# Defaults per model: ENV  CONFIG  CKPT_SUBDIR  EXTRA_SET (space-separated tokens)
+# All local MME encoders run in the single unified `bprbench` conda env.
+ENV="bprbench"
+
+# Defaults per model: CONFIG  CKPT_SUBDIR  EXTRA_SET (space-separated tokens)
 case "$MODEL" in
     clip)
-        ENV=bpr_main; CONFIG=configs/clip.yaml; CKPT_SUBDIR=""; EXTRA_SET=()
+        CONFIG=configs/clip.yaml; CKPT_SUBDIR=""; EXTRA_SET=()
         ;;
     vir2|vir2-clip|vir2clip)
-        ENV=bpr_main; CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="vir2_clip"
+        CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="vir2_clip"
         EXTRA_SET=(model.architecture=vir2_clip)
         ;;
     quiltnet|quilt)
-        ENV=bpr_main; CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="quiltnet"
+        CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="quiltnet"
         EXTRA_SET=(model.architecture=quiltnet model.args.arch=ViT-B-32)
         ;;
     pathgen|pathgen-clip)
-        ENV=bpr_main; CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="pathgen"
+        CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="pathgen"
         EXTRA_SET=(model.architecture=pathgen model.args.arch=ViT-B-16)
         ;;
     conch)
-        ENV=bpr_custom; CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="conch"
+        CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="conch"
         EXTRA_SET=(model.architecture=conch)
         ;;
     musk)
-        ENV=bpr_custom; CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="musk"
+        CONFIG=configs/mme_local.yaml; CKPT_SUBDIR="musk"
         EXTRA_SET=(model.architecture=musk model.args.tokenizer=xlm-roberta-large)
         ;;
     *)
