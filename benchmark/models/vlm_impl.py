@@ -16,6 +16,12 @@ from benchmark.utils.io import truncate_for_log
 
 log = get_logger(__name__)
 
+# Paper (Extended Data Fig. 4): if a response cannot be parsed, the evaluated
+# model is queried again using the same prompt, for up to three attempts in
+# total. Only after all three attempts fail is GPT-5 used as the auxiliary
+# extractor on the final response.
+PAPER_MAX_QUERY_ATTEMPTS = 3
+
 
 def _to_data_url(path: Path) -> str:
     mime, _ = mimetypes.guess_type(str(path))
@@ -35,13 +41,16 @@ def _build_prompt(question: str, options: List[Dict[str, Any]]) -> str:
         for o in options
     ]
     option_text = "\n".join(option_lines)
+    # Verbatim layout of the paper's prompt (Extended Data Fig. 4). The
+    # "Input Image: {pathology image}" line maps to the attached image content
+    # parts, which are sent ahead of this text (see _call_api).
     return (
         f"Question: {question}\n"
         f"Options:\n{option_text}\n\n"
-        "Please analyze the pathology image and answer the question. "
-        "Respond with JSON ONLY (no explanation, no code fences). "
-        'Schema: {"option_letter":"one of the letters shown in Options"}\n'
-        'Example: {"option_letter":"B"}'
+        "Please analyze the pathology image and answer the question.\n"
+        "Respond with JSON ONLY (no explanation, no code fences).\n\n"
+        'Schema:\n{"option_letter":"one of the letters shown in Options"}\n\n'
+        'Output Example:\n{"option_letter": "B"}'
     )
 
 
@@ -132,14 +141,16 @@ class VLMAdapter(BaseInference):
         """
         Returns: (content, prompt_tokens, completion_tokens, latency_s)
         """
-        content: List[dict] = [{"type": "text", "text": prompt}]
-        for p in image_paths:
-            content.append(
-                {
-                    "type": "image_url",
-                    "image_url": {"url": _to_data_url(p)},
-                }
-            )
+        # Paper layout: the pathology image comes first (the "Input Image:"
+        # line of the prompt template), followed by the Question/Options text.
+        content: List[dict] = [
+            {
+                "type": "image_url",
+                "image_url": {"url": _to_data_url(p)},
+            }
+            for p in image_paths
+        ]
+        content.append({"type": "text", "text": prompt})
 
         messages = []
         # Omit the system role entirely when no system prompt is configured
@@ -205,6 +216,83 @@ class VLMAdapter(BaseInference):
 
         raise RuntimeError(f"VLM request failed after retries: {last_error}")
 
+    def _predict_single(
+        self,
+        system_prompt: str,
+        prompt: str,
+        valid_labels: List[str],
+        sample_paths: List[Path],
+        extractor_repair: bool,
+        extractor_max_retries: int,
+        extractor_backoff_s: float,
+    ) -> PredictionRecord:
+        if len(sample_paths) > 1:
+            identifier = str(sample_paths[0].parent)
+        else:
+            identifier = str(sample_paths[0])
+
+        raw = ""
+        pred = ""
+        p_tok, c_tok, lat = 0, 0, 0.0
+        try:
+            # Paper protocol: query the model with the same prompt, re-query on
+            # parse failure for up to three attempts in total, and only then
+            # fall back to the GPT-5 auxiliary extractor on the final response.
+            for attempt in range(1, PAPER_MAX_QUERY_ATTEMPTS + 1):
+                a_raw, a_p, a_c, a_lat = self._call_api(system_prompt, prompt, sample_paths)
+                # Token/latency accounting is cumulative across attempts: failed
+                # attempts still consumed API budget and must not be dropped.
+                raw = a_raw
+                p_tok += a_p
+                c_tok += a_c
+                lat += a_lat
+                pred = parse_option_letter(raw, valid_labels)
+                if pred:
+                    break
+                if attempt < PAPER_MAX_QUERY_ATTEMPTS:
+                    log.warning(
+                        "Sample %s: attempt %s/%s unparseable; re-querying the model with the same prompt.",
+                        identifier,
+                        attempt,
+                        PAPER_MAX_QUERY_ATTEMPTS,
+                    )
+
+            if (not pred) and extractor_repair:
+                pred = (
+                    self.option_repair_agent.repair(
+                        raw,
+                        valid_labels,
+                        max_retries=extractor_max_retries,
+                        backoff_s=extractor_backoff_s,
+                    )
+                    or ""
+                )
+        except Exception as exc:
+            log.error("VLM inference failed for %s: %s", identifier, exc)
+            if not raw:
+                raw = f"Error: {str(exc)}"
+
+        # Strict evaluation: no random fallback. A failure to produce a
+        # valid option letter is recorded as INVALID and scored as wrong,
+        # matching the paper's correctness criterion.
+        if not pred:
+            pred = "INVALID"
+            raw = (raw or "") + " [FAILED_TO_PARSE]"
+            log.warning(
+                "Sample %s: no valid option letter after %s attempts; marked INVALID.",
+                identifier,
+                PAPER_MAX_QUERY_ATTEMPTS,
+            )
+
+        return PredictionRecord(
+            sample_id=identifier,
+            pred_label=pred,
+            raw_output=raw,
+            input_tokens=p_tok,
+            output_tokens=c_tok,
+            latency_s=lat,
+        )
+
     def predict(
         self,
         samples: List[List[Path]],
@@ -230,57 +318,19 @@ class VLMAdapter(BaseInference):
         rows: List[PredictionRecord] = []
         with ThreadPoolExecutor(max_workers=workers) as executor:
             future_to_sample = {
-                executor.submit(self._call_api, system_prompt, prompt, s): s
+                executor.submit(
+                    self._predict_single,
+                    system_prompt,
+                    prompt,
+                    valid_labels,
+                    s,
+                    extractor_repair,
+                    extractor_max_retries,
+                    extractor_backoff_s,
+                ): s
                 for s in samples
             }
             for future in as_completed(future_to_sample):
-                sample_paths = future_to_sample[future]
-                if len(sample_paths) > 1:
-                    identifier = str(sample_paths[0].parent)
-                else:
-                    identifier = str(sample_paths[0])
-
-                raw = ""
-                pred = ""
-                p_tok, c_tok, lat = 0, 0, 0.0
-                try:
-                    raw, p_tok, c_tok, lat = future.result()
-                    pred = parse_option_letter(raw, valid_labels)
-                    if (not pred) and extractor_repair:
-                        pred = (
-                            self.option_repair_agent.repair(
-                                raw,
-                                valid_labels,
-                                max_retries=extractor_max_retries,
-                                backoff_s=extractor_backoff_s,
-                            )
-                            or ""
-                        )
-                except Exception as exc:
-                    log.error("VLM inference failed for %s: %s", identifier, exc)
-                    if not raw:
-                        raw = f"Error: {str(exc)}"
-
-                # Strict evaluation: no random fallback. A failure to produce a
-                # valid option letter is recorded as INVALID and scored as wrong,
-                # matching the paper's correctness criterion.
-                if not pred:
-                    pred = "INVALID"
-                    raw = (raw or "") + " [FAILED_TO_PARSE]"
-                    log.warning(
-                        "Sample %s: no valid option letter extracted; marked INVALID.",
-                        identifier,
-                    )
-
-                rows.append(
-                    PredictionRecord(
-                        sample_id=identifier,
-                        pred_label=pred,
-                        raw_output=raw,
-                        input_tokens=p_tok,
-                        output_tokens=c_tok,
-                        latency_s=lat,
-                    )
-                )
+                rows.append(future.result())
 
         return rows

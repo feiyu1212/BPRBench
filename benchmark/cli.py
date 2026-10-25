@@ -88,7 +88,11 @@ def main() -> None:
 
     parser_run = subparsers.add_parser("run", help="Run benchmark evaluation")
     parser_run.add_argument("-c", "--config", type=str, help="Path to base YAML config (optional with --set)")
-    parser_run.add_argument("--set", nargs="+", help="Override config keys, e.g. eval.batch_size=16")
+    # action="append" so repeated --set flags accumulate; with the default
+    # store action, a second --set would silently drop the first one.
+    parser_run.add_argument("--set", nargs="+", action="append",
+                            help="Override config keys, e.g. eval.batch_size=16. "
+                                 "May be repeated and/or take multiple key=value tokens.")
     parser_run.add_argument("--stage", type=str, default="all", choices=["all", "infer", "score"])
 
     # Batch VLM evaluation channel
@@ -112,7 +116,10 @@ def main() -> None:
         if not args.config and not args.set and not args.models and not args.model_name and not args.provider:
             parser_run.error("Must provide either --config, --set, --models, --model-name, or --provider")
 
-        base_cfg = BenchmarkConfig.load(args.config, overrides=args.set)
+        base_cfg = BenchmarkConfig.load(
+            args.config,
+            overrides=[o for group in (args.set or []) for o in group],
+        )
         target_models = _resolve_models(args, base_cfg)
 
         if args.image_dir:

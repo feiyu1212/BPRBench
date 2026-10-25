@@ -18,6 +18,12 @@ ENV_NAME="${ENV_NAME:-bprbench}"
 
 cd "$REPO_ROOT"
 
+# Hide user site-packages (~/.local/...) during installation. Without this,
+# pip sees user-site packages as satisfying dependencies (e.g. mpmath, pytz,
+# joblib) and skips installing them into the env, while the run scripts set
+# PYTHONNOUSERSITE=1 at runtime — leaving the env incomplete.
+export PYTHONNOUSERSITE=1
+
 if conda env list | grep -qE "^${ENV_NAME}[[:space:]]"; then
   if [[ "${FORCE:-0}" != "1" ]]; then
     echo "Conda env '$ENV_NAME' already exists — skipping creation."

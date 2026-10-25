@@ -101,7 +101,7 @@ class DefaultsConfig(BaseModel):
             "qwen/qwen3.5-397b-a17b",
             "qwen/qwen3-vl-32b-instruct",
             "meta-llama/llama-4-maverick",
-            # "opengvlab/internvl3.5-78b",  # deprecated on OpenRouter
+            # "opengvlab/internvl3-78b",  # deprecated on OpenRouter
             "anthropic/claude-sonnet-4.5",
             # "x-ai/grok-4",  # deprecated on OpenRouter
             # "moonshotai/kimi-2.5",  # deprecated on OpenRouter
@@ -114,7 +114,7 @@ class DefaultsConfig(BaseModel):
         default_factory=lambda: {
             "qwen3-vl-32b-instruct": {"in": 0.0000001040, "out": 0.000000416},
             "qwen3.5-397b-a17b": {"in": 0.000000150, "out": 0.000001000},
-            "internvl3.5-78b": {"in": 0.000000150, "out": 0.000000600},
+            "internvl3-78b": {"in": 0.000000150, "out": 0.000000600},
             "llama-4-maverick": {"in": 0.000000150, "out": 0.000000600},
             "kimi-2.5": {"in": 0.000000230, "out": 0.000003000},
             "gemini-3-pro-preview": {"in": 0.000002000, "out": 0.000012000},

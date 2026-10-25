@@ -54,23 +54,26 @@ the benchmark package's own metadata is in [`pyproject.toml`](../pyproject.toml)
 
 ## Typical install time
 
-- `bash scripts/setup_env.sh` — dominated by the PyTorch/CUDA download and the
-  git-based CONCH/MUSK/quilt-llava installs; actual time depends on network
-  bandwidth.
-- Model checkpoints are downloaded separately (`python tools/download_checkpoints.py`)
-  and add network-dependent time.
+**Approximately 45 minutes** (measured: 43 min) on an Ubuntu 20.04 workstation
+with an empty pip cache, dominated by the PyTorch cu121 wheel downloads; actual
+time depends mainly on network bandwidth. Model checkpoints are downloaded
+separately (`python tools/download_checkpoints.py`) and add network-dependent
+time.
 
 ## Expected demo runtime (sample dataset)
 
-The bundled sample dataset (`data/sample_dataset/`: 45 items, 465 patches) is used
-for all demo runs below.
+The bundled sample dataset (`data/sample_dataset/`: 45 items, 465 patches) is
+used for all demo runs. GPU numbers were measured on a single
+**NVIDIA A800-SXM4-80GB**.
 
-- **Local MME** (e.g. Vir2-CLIP) on GPU.
+- **Local MME (Vir2-CLIP)** — **approximately 6 minutes** end-to-end
+  (`bash scripts/run_mme_local.sh vir2`).
+- **Quilt-LLaVA** — **approximately 15 minutes** end-to-end
+  (`bash scripts/run_mllm_qllava.sh`; measured 14 min 34 s: ~9 min server
+  startup with cached weights + ~5 min inference). The first run is
+  substantially longer, as the ~17 GB of model weights are downloaded before
+  serving.
 - **API MLLM** — runtime depends on API latency.
-- **Quilt-LLaVA, first run** — substantially longer, as it downloads the 7B
-  weights before serving.
-- **Quilt-LLaVA, subsequent runs** — once weights are cached, only inference
-  time applies.
 
 ## Expected output
 
